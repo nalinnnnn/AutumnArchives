@@ -1,0 +1,146 @@
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FASHION HOMEPAGE</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Bitter:ital,wght@0,100..900;1,100..900&family=Just+Another+Hand&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Bitter:ital,wght@0,100..900;1,100..900&family=Just+Another+Hand&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Bitter:ital,wght@0,100..900;1,100..900&family=Just+Another+Hand&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap" rel="stylesheet">
+        <script src="script.js"></script>
+
+
+
+    </head>
+    <body>
+  <style>
+
+
+    .flex-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .flex-image img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .flex-text {
+      max-width: 600px;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      text-align: center;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .container {
+      animation: popIn 3.7s ease-out forwards;
+      transform-origin: center;
+      opacity: 0;
+    }
+
+    
+
+    /* MOBILE VIEW */
+    @media (max-width: 768px) {
+
+      .container {
+        margin-top: 550px;
+      }
+    }
+
+
+
+  </style>
+    <header>
+<a href="index.html"><nav class="navbar">
+    <img src="img/logo.png">
+    <ul></a>
+
+
+                    <li class="dropdown"><a href="fashion.html">FASHION</a>
+<ul class="dropdown-content">
+    <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
+    <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
+    <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
+    <li><a href="1920_fashion.html">1920s Fashion</a></li>
+    <li><a href="modern_fashion.html">Modern Fashion</a></li>
+  </li></ul>
+
+
+
+  <li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
+<ul class="dropdown-content">
+    <li><a href="giza.html">Giza</a></li>
+    <li><a href="babylon.html">Babylon</a></li>
+    <li><a href="artemis.html">Artemis</a></li>
+    <li><a href="zeus.html">Statue Of Zeus</a></li>
+    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
+    <li><a href="rhodes.html">Rhodes</a></li>
+    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
+  </li></ul>
+
+  <li class="dropdown"><a href="art.html">ART PIECES</a>
+
+
+  <li class="dropdown"><a href="index.html">HOME</a>
+  <ul class="dropdown-content">
+    <li><a href="paleolithic.html">Paleolithic</a></li>
+    <li><a href="renaissance.html">Renaissance</a></li>
+    <li><a href="victorian.html">Victorian</a></li>
+    <li><a href="jazz.html">1920s</a></li>
+    <li><a href="modern.html">Modern</a></li>
+  </ul></li>
+</ul>
+
+      </nav>
+  </header>
+
+
+        <div class="parallax-container">
+            <section class="era" id="fashion_p">
+                <a href="paleolithic_fashion.html" style="text-decoration: none; color:white;">
+                    <h1>PALEOLITHIC </h1></a> <br>
+                <p>-Click to get more info about fashion in  Paleolithic Era</p>
+                </section>
+                
+            
+             <section class="era" id="fashion_r">
+                <a href="renaissance_fashion.html" style="text-decoration: none; color:white;"><h1>RENAISSANCE </h1></a>
+                <br>
+                <p>--Click to get more info about fashion in  Renaissance Era </p>
+            </section>
+                <section class="era" id="fashion_v">
+                <a href="victorian_fashion.html" style="text-decoration: none; color:white;"> <h1>VICTORIAN ART</h1></a>
+                <br>
+                <p>-Click to get more info about fashion in  Victorian Era</p>
+            </section>
+                 <section class="era" id="fashion_j">
+                <a href="1920s_fashion.html" style="text-decoration: none; color:white;"> <h1>1920s JAZZ AGE</h1></a>
+                <br>
+                <p>-Click to get more info about fashion in  1920s Jazz Age</p>
+            </section>
+                  <section class="era" id="fashion_m">
+                <a href="modern_fashion.html" style="text-decoration: none; color:white;"> <h1>MODERN ERA</h1></a>
+                <br>
+                <p>-Click to get more info about fashion in  Modern Era</p>
+            </section>
+        </div>
+        
+    </body>
+    </html>

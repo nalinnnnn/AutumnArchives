@@ -1,0 +1,2064 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    .navbar {
+    width: 100%;
+    background-color: transparent;
+    height: 180px;
+    position: fixed; /* Fix it at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 0.5s;
+}
+
+.navbar:hover {
+    background-color: rgb(255, 245, 215);
+    transition: 0.5s;
+}
+
+.navbar:hover ul li a {
+    color: rgb(0, 0, 0); 
+    transition: 0.5s;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: rgb(255, 255, 255);
+    font-family: "Oswald", sans-serif;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    padding-top:40px;
+    padding-right: 25px;
+    font-size: 35px;
+    display: block;
+}
+
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transform: scaleX(0); /* Start with no width */
+    transform-origin: left; /* Expands from left */
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1); /* Expands the underline from left to right */
+    text-shadow: none;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    gap:30px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.navbar img {
+    transition: filter 0.5s ease-in-out;
+    filter: invert(1);
+    height: 180px;
+    width:180px;
+    margin-top:10px;
+    margin-left: 20px;
+}
+
+.navbar:hover img {
+    filter: invert(0);
+}
+
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(255, 245, 215);
+    width: 100%;
+    position: static;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar img {
+    height: 120px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .navbar ul li a {
+    font-size: 22px;
+    padding: 10px 0;
+    color: black;
+    text-shadow: none;
+  }
+
+  .navbar ul li.dropdown {
+    width: 100%;
+  }
+
+  .navbar ul li .dropdown-content {
+    position: static;
+    margin-top: 0;
+    background-color: rgba(255, 245, 215, 0.9);
+    box-shadow: none;
+    padding-left: 20px;
+    display: none; /* hide by default */
+  }
+
+  .navbar ul li.dropdown.open .dropdown-content {
+    display: flex !important;
+  }
+}
+
+
+/* Container for dropdown */
+.dropdown {
+  position: relative;
+  }
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  top: calc(100% + 10px); /* <-- this moves it 10px below the button */
+  left: 0;
+  width:150px;
+  background-color: rgb(255, 245, 215);
+  min-width: 100px;
+  margin-top:84px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  padding: 10px 0; 
+  border-radius: 5px;
+}
+
+.dropdown-content li {
+  padding: 0px 0px; 
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+
+.dropdown-content li a {
+font-size: 24px!important;
+  padding: 8px 5px!important;
+  color: black;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+}
+
+
+.dropdown-content li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  transition: 0.3s;
+}
+
+/* Force dropdowns to be hidden unless hovering */
+.navbar ul .dropdown-content {
+  display: none !important;
+}
+
+/* Show only when hovering the parent dropdown */
+.navbar ul li.dropdown:hover .dropdown-content {
+  display: block !important;
+}
+
+.dropdown-button {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  top: 100%; /* This now correctly sits just below the entire .dropdown-button */
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+    padding: 20px;
+    gap: 10px;
+    background-color: rgb(255, 245, 215);
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    color: black;
+    font-size: 22px;
+    padding: 10px 0;
+    text-shadow: none;
+  }
+
+  .navbar ul li.dropdown {
+    width: 100%;
+  }
+
+  .navbar ul li .dropdown-content {
+    position: static;
+    margin-top: 0;
+    background-color: rgba(255, 245, 215, 0.9);
+    box-shadow: none;
+    padding-left: 20px;
+    display: none; /* hide by default */
+  }
+
+  .navbar ul li.dropdown.open .dropdown-content {
+    display: flex !important;
+  }
+
+  .navbar img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 40px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(255, 245, 215);
+    width: 100%;
+    position: static;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+}
+
+
+
+
+
+.era p {
+    display: block;
+    font-size: 30px;
+    margin:0;
+    text-align: left;
+    margin-top:-80px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    color:white;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+}
+
+
+
+.era {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    background-size: cover;
+    background-position: top center; 
+    background-attachment: fixed;
+    margin-top: 0; 
+    padding-top: 0; 
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+    background-size: 100%; /* Default size */
+    transition: background-size 0.8s ease-in-out;
+}
+
+.era:hover {
+    background-size: 105%; 
+}
+
+/* Background Images for Each Era */
+#ancient {
+    background-image: url('img/ancient.jpg'); 
+    color:rgb(0, 0, 0);  
+}
+
+#renaissance {
+    background-image: url('img/renaissance.jpg');
+}
+
+#victorian {
+    background-image: url('img/victorian.jpg');
+}
+
+#roaring20s {
+    background-image: url('img/1920s.jpg');
+}
+
+#modern {
+    background-image: url('img/modern.jpg');
+}
+
+
+.typewriter {
+    display: flex;
+    display:inline-block; /* Align the content properly */
+}
+
+.typewriter p {
+    font-family: "Oswald";
+    font-weight: 800;
+    font-style: normal;
+    margin-top: 200px;
+    margin-left:30px;
+    color: rgb(255, 240, 232);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.69);
+    font-size: 80px;    
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid rgb(255, 240, 232); /* Cursor color */
+    animation: typing 3s  0s forwards, blink 0.85s step-end infinite; /* Typing + Blinking */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Hide cursor after typing */
+    }
+}
+
+.section{
+    display:grid;
+    place-items: center;
+    align-content: center;
+    min-height:100vh;
+}
+
+.hidden{
+    color:white;
+    filter:blur(2px);
+    transform:translateX(-100%);
+    margin-top:0px;
+    font-size: 50px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show{
+    opacity:1;
+    filter:blur(0);
+    transform: translateX(0);
+}
+
+p1{
+  color:white;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size:20px;
+  margin-left:30px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: "Oswald", sans-serif;
+  font-style: italic;
+  color: rgb(255, 240, 232);
+  margin-left: 35px;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.renaisubtitle{
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+  font-style: italic;
+  color:black;
+  display:inline-block;
+  text-align: left;
+    margin-left: 30px;
+  letter-spacing: 1.5px;
+}
+
+.image-with-caption{
+     text-align: left;
+}
+
+
+.paleo-container {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+    padding: 20px;
+    padding-top:200px;
+    padding-bottom:-100px;
+}
+
+.paleo-container2 {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding-bottom: 0;
+    align-items: center;
+    margin-left:30px;
+    padding: 20px;
+    margin-bottom:-10%;
+    border-radius: 10px;
+margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.paleo-container3 {
+     display: flex;
+    align-items: center;  
+margin-bottom: 0;
+    padding-bottom: 0;
+    align-items: center;
+gap:10px;   
+text-align: right;
+
+
+}
+
+
+.paleohead{
+    width:800px;
+    margin-left: 30px;
+    margin-top:-10%;
+    align-content: left;
+}
+
+.side-by-side {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin: 40px;
+  flex-direction: row-reverse;
+}
+
+
+.paleodesc{
+    font-size: 30px;
+    margin-top:-20%;
+    margin-left:20px;
+    color: rgb(0, 0, 0); 
+    max-width: 600px;
+    line-height: 1.3;
+font-family: 'EB Garamond', serif;
+  font-weight: 800;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.paleodescR {
+  font-size: 30px;
+  color: rgb(0, 0, 0); 
+  max-width: 600px;
+  line-height: 1.3;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: left; /* change from right to left for normal reading flow */
+  margin: 0;
+}
+
+.paleodesc7{
+   font-size: 30px; 
+    margin-left:20px;
+    color: rgb(0, 0, 0); 
+    max-width: 600px;
+    line-height: 1.3;
+   font-family: 'EB Garamond', serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.paleodesc2 {
+  font-size: 30px;
+  color: rgb(0, 0, 0); 
+  max-width: 950px;
+  text-align: center;
+  line-height: 1.3;
+font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  letter-spacing: 1px;  
+  margin-top: 0px;
+  padding-bottom: 20px; 
+  margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.paleodesc3  {
+  font-size: 30px;
+  color: rgb(0, 0, 0); 
+  text-align: left;
+  max-width: 950px;
+text-align: left;
+  line-height: 1.3;
+font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  letter-spacing: 1px;  
+  margin-top: 0px;
+  padding-bottom: 20px; 
+  margin-bottom: 0;
+    padding-bottom: 0;
+    padding:20px;
+}
+
+.paleotitle{
+    font-size: 60px;
+    font-family: "Oswald", sans-serif;
+    color:black;
+    text-align:center;
+    font-weight:500;
+    margin-left: 45px;
+}
+
+.paleotitle2{
+    font-size: 60px;
+    font-family: "Oswald", sans-serif;
+    color:black;
+    text-align:center;
+    font-weight:500;
+    margin-left: 45px;
+}
+
+.subbox {
+  display: flex;
+  justify-content: center; /* this centers the items horizontally */
+  align-items: center;     /* optional: centers vertically if needed */
+  gap: 15px;               /* optional: space between images */
+  flex-wrap: wrap;   
+padding-left:100px;
+}
+    
+
+.text-center-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */          /* Full viewport height */
+    text-align: center;
+    height: auto; /* or remove height */
+    margin-top: 0;
+    padding: 20px;
+    box-sizing: flex;  
+}
+
+.paleoBlog{
+   max-width: 1500px;
+margin: 60px 90px 60px 90px;
+  background-color: rgb(142, 152, 157);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.paleoBlogR{
+    max-width: 1500px;
+margin: 60px 90px 60px 90px;
+  background-color: rgb(197, 192, 144);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+
+@keyframes glowColors {
+  0% {
+    color: #000000;
+    text-shadow: 0 0 10px #de9862, 0 0 20px #de9862;
+  }
+  25% {
+    color: #000000;
+    text-shadow: 0 0 10px #eddd9c, 0 0 20px #eddd9c;
+  }
+  50% {
+    color: #000000;
+    text-shadow: 0 0 10px #c5e9b7, 0 0 20px #c5e9b7;
+  }
+  75% {
+    color: #000000;
+    text-shadow: 0 0 10px #79e0ff, 0 0 20px #79e0ff;
+  }
+  100% {
+    color: #000000;
+    text-shadow: 0 0 10px #debbf3, 0 0 20px #debbf3;
+  }
+}
+
+.glow-text {
+  font-size: 40px;
+  font-weight: bold;
+  animation: glowColors 4s infinite;
+  font-size: 45px;
+  text-align: center; /* Optional */  
+   font-family: 'Yeseva One', serif;
+    color:black;
+    text-align: left;
+}
+
+.glow-effect{
+animation: glowColors 4s infinite;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.stackimg {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 1%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(236, 229, 177);
+  height: 1200px;
+  text-align: center;
+  margin-top:20px;
+  border-radius: 15px;
+}
+
+.stackimg img {
+  height: 400px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.stackdesc {
+  margin-top: 100px;
+}
+
+
+mark{
+    background-color: rgb(239, 186, 195);
+}
+
+.wonders{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    color: white;
+    background-size: cover;
+    background-position: top center; 
+    background-attachment: fixed;
+    padding-top: 150px;  
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+    background-size: 100%; /* Default size */
+    transition: background-size 0.8s ease-in-out;
+}
+
+#giza{
+  background-image:url(img/giza.jpg);
+}
+
+#babylon{
+  background-image: url(img/babylon.jpg)  ;
+}
+
+#artemis{
+  background-image: url(img/artemis.jpg)  ;
+}
+
+#zeus{
+  background-image: url(img/zeus.jpg);
+}
+
+#Mausoleum{
+    background-image: url(img/mausoleum.jpg);
+}
+
+#colossus{
+    background-image: url(img/colossus.png);
+}
+
+#alexandria{
+    background-image: url(img/alexandria.png  );
+}
+
+.banner{
+  position: absolute;
+  width:0;
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+.banner h2{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size:25vw;
+  color:white;
+  background:black;
+  mix-blend-mode: multiply;
+  line-height: 0.85rem;
+  text-align: center;
+}
+
+.top-section {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  z-index: 10; /* Make sure it's on top */
+}
+
+.title7 {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 90px;
+  color: white; /* or something that contrasts the video */
+  margin-top:160px;
+}
+
+.subtitle7{
+  text-shadow: 0 0 10px rgb(190, 181, 131), 0 0 20px rgb(183, 159, 100);
+  font-family: "Oswald", sans-serif;
+  font-style: italic;
+  color: rgb(255, 240, 232);
+  margin-left: 35px;
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.img7{
+  width:550px;
+  height:300px;
+  border-radius:10px;
+  align-items: center;
+}
+
+.subtext{
+  font-size: 38px;
+  font-family: "Oswald", sans-serif;
+  color:black;
+  text-align:left;
+  margin-top: 20px;
+  font-weight:500;
+  margin-left: 45px;
+}
+
+#mystery1{
+  text-shadow: 0 0 10px rgb(96, 255, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery2{
+  text-shadow: 0 0 10px rgb(255, 134, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery3{
+  text-shadow: 0 0 10px rgb(105, 255, 97), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery4{
+  text-shadow: 0 0 10px rgb(255, 88, 88), 0 0 20px rgb(255, 255, 255);
+}
+
+
+
+.mystery {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between; /* space between text and image */
+  gap: 20px;
+  margin-top:20px;
+}
+
+.mystery img {
+  height: 350px;
+  border-radius: 10px;
+  margin-right:130px;
+  margin-top: 20px;
+}
+
+.text-content {
+  flex: 1;
+  width: 1200px;
+}
+
+.image-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right:80px;
+}
+
+
+#gizatitle{
+   text-shadow: 0 0 10px rgb(235, 219, 133), 0 0 20px rgb(164, 135, 60);
+}
+
+#babylontitle{
+  text-shadow: 0 0 10px rgb(49, 125, 28), 0 0 20px rgb(253, 254, 169); ;
+}
+
+#artemistitle{
+  text-shadow: 0 0 10px rgb(123, 160, 255), 0 0 20px rgb(253, 254, 169);
+}
+
+#zeustitle{
+ text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 208, 0);
+}
+
+#mausoleumtitle{
+ text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(1, 1, 1);
+}
+
+#rhodestitle{
+ text-shadow: 0 0 10px rgb(227, 188, 70), 0 0 20px rgb(208, 174, 118);
+}
+
+#alexandriatitle{
+ text-shadow: 0 0 10px rgb(153, 156, 225), 0 0 20px rgb(148, 149, 215);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+.navbar {
+  width: 100%;
+  background-color: transparent;
+  height: 180px;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.5s;
+}
+
+.navbar:hover {
+  background-color: rgb(255, 245, 215);
+  transition: 0.5s;
+}
+
+.navbar:hover ul li a {
+  color: rgb(0, 0, 0); 
+  transition: 0.5s;
+}
+
+.container {
+  max-width: 900px;
+  margin: 220px auto 40px auto;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.container h1 {
+  font-family: 'Yeseva One', serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around; 
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+  padding-top:40px;
+  padding-right: 25px;
+  font-size: 35   ;
+  display: block;
+}
+
+.navbar ul li a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transform: scaleX(0); /* Start with no width */
+  transform-origin: left; /* Expands from left */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1); /* Expands the underline from left to right */
+  text-shadow: none;
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap:30px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.navbar img {
+  transition: filter 0.5s ease-in-out;
+  filter: invert(1);
+  height: 180px;
+  width:180px;
+  margin-top:10px;
+  margin-left: 20px;
+}
+
+.navbar:hover img {
+  filter: invert(0);
+}
+
+.era p {
+  display: block;
+  font-size: 30px;
+  margin:0;
+  text-align: left;
+  margin-top:-80px;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  color:white;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+}
+
+
+
+.era {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  background-size: cover;
+  background-position: top center; 
+  background-attachment: fixed;
+  margin-top: 0; 
+  padding-top: 0; 
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+  background-size: 100%; /* Default size */
+  transition: background-size 0.8s ease-in-out;
+}
+
+.era:hover {
+  background-size: 105%; 
+}
+
+/* Background Images for Each Era */
+#ancient {
+  background-image: url('img/ancient.jpg'); 
+  color:rgb(0, 0, 0);  
+}
+
+#fashion_p {
+  background-image: url('img/p_p.jpg');
+}
+
+#fashion_r {
+  background-image: url('img/r_r.jpg');
+}
+
+#fashion_v {
+  background-image: url('img/v_v.jpg');
+}
+
+#fashion_j {
+  background-image: url('img/j_j.jpg');
+}
+
+#fashion_m {
+  background-image: url('img/m_m.jpg');
+}
+#renaissance {
+  background-image: url('img/renaissance.jpg');
+}
+
+#victorian {
+  background-image: url('img/victorian.jpg');
+}
+
+#roaring20s {
+  background-image: url('img/1920s.jpg');
+}
+
+#modern {
+  background-image: url('img/modern.jpg');
+}
+
+.writer {
+  display: flex;
+  display:inline-block /* Align the content properly */
+}
+
+.typewriter p {
+  font-family: "Oswald";
+  font-weight: 800;
+  font-style: normal;
+  margin-top: 200px;
+  margin-left:30px;
+  color: rgb(255, 240, 232);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.69);
+  font-size: 80px;    
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgb(255, 240, 232); /* Cursor color */
+  animation: typing 3s  1s forwards, blink 0.85s step-end infinite; /* Typing + Blinking */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+      border-color: transparent; /* Hide cursor after typing */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  background-color: transparent;
+  height: 180px;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.5s;
+}
+
+.navbar:hover {
+  background-color: rgb(255, 245, 215);
+  transition: 0.5s;
+}
+
+.navbar:hover ul li a {
+  color: rgb(0, 0, 0); 
+  transition: 0.5s;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+  padding-top:40px;
+  padding-right: 25px;
+  font-size: 35   ;
+  display: block;
+}
+
+.navbar ul li a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transform: scaleX(0); /* Start with no width */
+  transform-origin: left; /* Expands from left */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1); /* Expands the underline from left to right */
+  text-shadow: none;
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap:30px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.navbar img {
+  transition: filter 0.5s ease-in-out;
+  filter: invert(1);
+  height: 180px;
+  width:180px;
+  margin-top:10px;
+  margin-left: 20px;
+}
+
+.navbar:hover img {
+  filter: invert(0);
+}
+
+@media (max-width: 768px) {
+.navbar {
+  height: auto;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar img {
+  height: 120px;
+  width: 120px;
+}
+
+.navbar ul li a {
+  font-size: 20px;
+  padding-right: 0;
+}
+}
+
+.era p {
+  display: block;
+  font-size: 30px;
+  margin:0;
+  text-align: left;
+  margin-top:-80px;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  color:white;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.478);
+}
+
+
+
+.era {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  background-size: cover;
+  background-position: top center; 
+  background-attachment: fixed;
+  margin-top: 0; 
+  padding-top: 0; 
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+  background-size: 100%; /* Default size */
+  transition: background-size 0.8s ease-in-out;
+}
+
+.era:hover {
+  background-size: 105%; 
+}
+
+/* Background Images for Each Era */
+#ancient {
+  background-image: url('img/ancient.jpg'); 
+  color:rgb(0, 0, 0);  
+}
+
+#renaissance {
+  background-image: url('img/renaissance.jpg');
+}
+
+#victorian {
+  background-image: url('img/victorian.jpg');
+}
+
+#roaring20s {
+  background-image: url('img/1920s.jpg');
+}
+
+#modern {
+  background-image: url('img/modern.jpg');
+}
+
+
+.typewriter {
+  display: flex;
+  display:inline-block; /* Align the content properly */
+}
+
+.typewriter p {
+  font-family: "Oswald";
+  font-weight: 800;
+  font-style: normal;
+  margin-top: 200px;
+  margin-left:30px;
+  color: rgb(255, 240, 232);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.69);
+  font-size: 80px;    
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgb(255, 240, 232); /* Cursor color */
+  animation: typing 3s  0s forwards, blink 0.85s step-end infinite; /* Typing + Blinking */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+      border-color: transparent; /* Hide cursor after typing */
+  }
+}
+
+.section{
+  display:grid;
+  place-items: center;
+  align-content: center;
+  min-height:100vh;
+}
+
+.hidden{
+  color:white;
+  filter:blur(2px);
+  transform:translateX(-100%);
+  margin-top:0px;
+  font-size: 50px;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show{
+  opacity:1;
+  filter:blur(0);
+  transform: translateX(0);
+}
+
+p1{
+color:white;
+font-family: "Libre Baskerville", serif;
+font-weight: 300;
+font-style: italic;
+font-size:20px;
+margin-left:30px;
+letter-spacing: 1px;
+}
+
+.subtitle {
+font-family: "Oswald", sans-serif;
+font-style: italic;
+color: rgb(255, 240, 232);
+margin-left: 35px;
+font-size: 30px;
+margin-top: 10px;
+}
+
+
+.paleo-container {
+  display: flex;
+  align-items: center; 
+  gap: 30px; 
+  padding: 20px;
+  padding-top:200px;
+  padding-bottom:-100px;
+}
+
+.paleo-container2 {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding-bottom: 0;
+  align-items: center;
+  margin-left:30px;
+  padding: 20px;
+  margin-bottom:-10%;
+  border-radius: 10px;
+margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.paleo-container3 {
+   display: flex;
+  align-items: center;  
+margin-bottom: 0;
+  padding-bottom: 0;
+  align-items: center;
+gap:10px;   
+text-align: right;
+
+
+}
+
+
+.paleohead{
+  width:800px;
+  margin-left: 30px;
+  margin-top:-10%;
+  align-content: left;
+}
+
+.paleodesc{
+  font-size: 30px;
+  margin-top:-20%;
+  margin-left:20px;
+  color: rgb(0, 0, 0); 
+  max-width: 600px;
+  line-height: 1.3;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.paleodesc2 {
+font-size: 30px;
+color: rgb(0, 0, 0); 
+max-width: 950px;
+text-align: center;
+line-height: 1.3;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+letter-spacing: 1px;  
+margin-top: 0px;
+padding-bottom: 20px; 
+margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.paleodesc3  {
+font-size: 30px;
+color: rgb(0, 0, 0); 
+text-align: left;
+max-width: 950px;
+text-align: left;
+line-height: 1.3;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+letter-spacing: 1px;  
+margin-top: 0px;
+padding-bottom: 20px; 
+margin-bottom: 0;
+  padding-bottom: 0;
+  padding:20px;
+}
+
+.paleotitle{
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  color:black;
+  text-align:center;
+  font-weight:500;
+  margin-left: 45px;
+}
+
+.paleotitle2{
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  color:black;
+  text-align:center;
+  font-weight:500;
+  margin-left: 45px;
+}
+
+.subbox {
+  display: flex;
+  justify-content: center; /* this centers the items horizontally */
+  align-items: center;     /* optional: centers vertically if needed */
+  gap: 15px;               /* optional: space between images */
+  flex-wrap: wrap;   
+padding-left:100px;
+}
+
+
+
+.text-center-wrapper {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */          /* Full viewport height */
+  text-align: center;
+  height: auto; /* or remove height */
+  margin-top: 0;
+  padding: 20px;
+  box-sizing: flex;  
+}
+
+.paleoBlog{
+ max-width: 1500px;
+  margin: 60px 90px 60px 90px;
+background-color: rgb(142, 152, 157);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+padding: 40px;
+border-radius: 30px;
+text-align: center;
+}
+
+
+@keyframes glowColors {
+0% {
+  color: #000000;
+  text-shadow: 0 0 10px #de9862, 0 0 20px #de9862;
+}
+25% {
+  color: #000000;
+  text-shadow: 0 0 10px #eddd9c, 0 0 20px #eddd9c;
+}
+50% {
+  color: #000000;
+  text-shadow: 0 0 10px #c5e9b7, 0 0 20px #c5e9b7;
+}
+75% {
+  color: #000000;
+  text-shadow: 0 0 10px #79e0ff, 0 0 20px #79e0ff;
+}
+100% {
+  color: #000000;
+  text-shadow: 0 0 10px #debbf3, 0 0 20px #debbf3;
+}
+}
+
+.glow-text {
+  font-size: 40px;
+  font-weight: bold;
+  animation: glowColors 4s infinite;
+  font-size: 45px;
+  text-align: center; /* Optional */  
+  font-family: 'Yeseva One', serif;
+  color:black;
+  text-align: left;
+}
+
+.glow-effect{
+animation: glowColors 4s infinite;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+.stackimg {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 1%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(255, 248, 196);
+  height: 1200px;
+  text-align: center;
+  margin-top:20px;
+  border-radius: 15px;
+}
+
+.stackimg img {
+  height: 400px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.stackdesc {
+  margin-top: 100px;
+}
+
+
+mark{
+    background-color: rgb(239, 186, 195);
+}
+
+.renaisubtitle{
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+font-style: italic;
+color:black;
+display:inline-block;
+text-align: left;
+  margin-left: 30px;
+letter-spacing: 1.5px;
+}
+
+.image-with-caption{
+   text-align: left;
+}
+
+.side-by-side {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin: 40px;
+  flex-direction: row-reverse;
+}
+
+.paleodescR {
+  font-size: 30px;
+  color: rgb(0, 0, 0); 
+  max-width: 600px;
+  line-height: 1.3;
+  font-family: 'EB Garamond', serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: left; /* change from right to left for normal reading flow */
+  margin: 0;
+}
+
+.paleoBlogR{
+    max-width: 1500px;
+  margin: 60px 90px 60px 90px;
+  background-color: rgb(197, 192, 144);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.wonders{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  color: white;
+  background-size: cover;
+  background-position: top center; 
+  background-attachment: fixed;
+  padding-top: 150px;  
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+  background-size: 100%; /* Default size */
+  transition: background-size 0.8s ease-in-out;
+}
+
+#giza{
+background-image:url(img/giza.jpg);
+}
+
+#babylon{
+background-image: url(img/babylon.jpeg)  ;
+}
+
+#artemis{
+background-image: url(img/artemis.jpg)  ;
+}
+
+#zeus{
+background-image: url(img/zeus.jpg);
+}
+
+#Mausoleum{
+  background-image: url(img/mausoleum.jpg);
+}
+
+#colossus{
+  background-image: url(img/colossus.png);
+}
+
+#alexandria{
+  background-image: url(img/alexandria.png  );
+}
+
+.banner{
+position: absolute;
+width:0;
+height: 100vh;
+overflow: hidden;
+
+}
+
+.banner h2{
+position: absolute;
+top:0;
+left:0;
+width:100%;
+height: 100%;
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-transform: uppercase;
+font-size:25vw;
+color:white;
+background:black;
+mix-blend-mode: multiply;
+line-height: 0.85rem;
+text-align: center;
+}
+
+.top-section {
+position: absolute;
+top: 0;
+width: 100%;
+text-align: center;
+padding-top: 20px;
+z-index: 10; /* Make sure it's on top */
+}
+
+.title7 {
+font-family: "Uncial Antiqua", system-ui;
+font-size: 90px;
+color: white; /* or something that contrasts the video */
+margin-top:160px;
+}
+
+.subtitle7{
+text-shadow: 0 0 10px rgb(190, 181, 131), 0 0 20px rgb(183, 159, 100);
+font-family: "Oswald", sans-serif;
+font-style: italic;
+color: rgb(255, 240, 232);
+margin-left: 35px;
+
+font-size: 30px;
+text-align: center;
+}
+
+.img7{
+width:550px;
+height:300px;
+border-radius:10px;
+align-items: center;
+}
+
+.subtext{
+font-size: 38px;
+font-family: "Oswald", sans-serif;
+color:black;
+text-align:left;
+margin-top: 20px;
+font-weight:500;
+margin-left: 45px;
+}
+
+#mystery1{
+text-shadow: 0 0 10px rgb(96, 255, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery2{
+text-shadow: 0 0 10px rgb(255, 134, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery3{
+text-shadow: 0 0 10px rgb(105, 255, 97), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery4{
+text-shadow: 0 0 10px rgb(255, 88, 88), 0 0 20px rgb(255, 255, 255);
+}
+
+
+
+.mystery {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between; /* space between text and image */
+gap: 20px;
+margin-top:20px;
+}
+
+.mystery img {
+height: 350px;
+border-radius: 10px;
+margin-right:130px;
+margin-top: 20px;
+}
+
+.text-content {
+flex: 1;
+width: 1200px;
+}
+
+.image-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right:80px;
+}
+
+
+#gizatitle{
+ text-shadow: 0 0 10px rgb(235, 219, 133), 0 0 20px rgb(164, 135, 60);
+}
+
+#babylontitle{
+  text-shadow: 0 0 10px rgb(49, 125, 28), 0 0 20px rgb(253, 254, 169); ;
+}
+
+.paleodesc7{
+   font-size: 30px; 
+    margin-left:20px;
+    color: rgb(0, 0, 0); 
+    max-width: 600px;
+    line-height: 1.3;
+   font-family: 'EB Garamond', serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.wonders{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  color: white;
+  background-size: cover;
+  background-position: top center; 
+  background-attachment: fixed;
+  padding-top: 150px;  
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.448);
+  background-size: 100%; /* Default size */
+  transition: background-size 0.8s ease-in-out;
+}
+
+#giza{
+background-image:url(img/giza.jpg);
+}
+
+#babylon{
+background-image: url(img/babylon.jpg)  ;
+}
+
+#artemis{
+background-image: url(img/artemis.jpg)  ;
+}
+
+#zeus{
+background-image: url(img/zeus.jpg);
+}
+
+#Mausoleum{
+  background-image: url(img/mausoleum.jpg);
+}
+
+#colossus{
+  background-image: url(img/colossus.png);
+}
+
+#alexandria{
+  background-image: url(img/alexandria.png  );
+}
+
+.banner{
+position: absolute;
+width:0;
+height: 100vh;
+overflow: hidden;
+
+}
+
+.banner h2{
+position: absolute;
+top:0;
+left:0;
+width:100%;
+height: 100%;
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-transform: uppercase;
+font-size:25vw;
+color:white;
+background:black;
+mix-blend-mode: multiply;
+line-height: 0.85rem;
+text-align: center;
+}
+
+.top-section {
+position: absolute;
+top: 0;
+width: 100%;
+text-align: center;
+padding-top: 20px;
+z-index: 10; /* Make sure it's on top */
+}
+
+.title7 {
+font-family: "Uncial Antiqua", system-ui;
+font-size: 90px;
+color: white; /* or something that contrasts the video */
+margin-top:160px;
+}
+
+.subtitle7{
+text-shadow: 0 0 10px rgb(190, 181, 131), 0 0 20px rgb(183, 159, 100);
+font-family: "Oswald", sans-serif;
+font-style: italic;
+color: rgb(255, 240, 232);
+margin-left: 35px;
+
+font-size: 30px;
+text-align: center;
+}
+
+.img7{
+width:550px;
+height:300px;
+border-radius:10px;
+align-items: center;
+}
+
+.subtext{
+font-size: 38px;
+font-family: "Oswald", sans-serif;
+color:black;
+text-align:left;
+margin-top: 20px;
+font-weight:500;
+margin-left: 45px;
+}
+
+#mystery1{
+text-shadow: 0 0 10px rgb(96, 255, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery2{
+text-shadow: 0 0 10px rgb(255, 134, 247), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery3{
+text-shadow: 0 0 10px rgb(105, 255, 97), 0 0 20px rgb(255, 255, 255);
+}
+
+#mystery4{
+text-shadow: 0 0 10px rgb(255, 88, 88), 0 0 20px rgb(255, 255, 255);
+}
+
+
+
+.mystery {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between; /* space between text and image */
+gap: 20px;
+margin-top:20px;
+}
+
+.mystery img {
+height: 350px;
+border-radius: 10px;
+margin-right:130px;
+margin-top: 20px;
+}
+
+.text-content {
+flex: 1;
+width: 1200px;
+}
+
+.image-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right:80px;
+}
+
+
+#gizatitle{
+ text-shadow: 0 0 10px rgb(235, 219, 133), 0 0 20px rgb(164, 135, 60);
+}
+
+#babylontitle{
+text-shadow: 0 0 10px rgb(49, 125, 28), 0 0 20px rgb(253, 254, 169); ;
+}
+
+#artemistitle{
+text-shadow: 0 0 10px rgb(123, 160, 255), 0 0 20px rgb(253, 254, 169);
+}
+
+#zeustitle{
+text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 208, 0);
+}
+
+#mausoleumtitle{
+text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(1, 1, 1);
+}
+
+#rhodestitle{
+text-shadow: 0 0 10px rgb(227, 188, 70), 0 0 20px rgb(208, 174, 118);
+}
+
+#alexandriatitle{
+text-shadow: 0 0 10px rgb(153, 156, 225), 0 0 20px rgb(148, 149, 215);
+}
+
+
+
+

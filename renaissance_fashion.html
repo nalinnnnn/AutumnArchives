@@ -47,14 +47,69 @@
         opacity: 1;
       }
     }
-
+    .headwall {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    }
+    .headwall-wrapper {
+       width: 100%;
+       height: 350px;
+       overflow: hidden;
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+       }
     .container {
-      animation: popIn 3.7s ease-out forwards;
+      animation: popIn 1.3s ease-out forwards;
       transform-origin: center;
       opacity: 0;
     }
 
-    
+    section.hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(3px);
+      transition: all 1s ease;
+    }
+
+    section.hidden.show {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .flex-row {
+        flex-direction: column;
+        margin: 30px 20px;
+      }
+
+      .flex-text {
+        text-align: center;
+      }
+
+      .flex-image img {
+        max-width: 90vw;
+      }
+
+      .example-clothes {
+        justify-content: center;
+      }
+
+      .headwall-wrapper {
+        height: 250px;
+      }
+
+      section.top-section h2.title7 {
+        font-size: 2.5rem;
+      }
+
+      section.top-section p.subtitle7 {
+        font-size: 1rem;
+      }
+    }
 
     /* MOBILE VIEW */
     @media (max-width: 768px) {
@@ -70,9 +125,12 @@
 
   </style>
       </head>
-
+    <div class="headwall-wrapper">
+  <img src="img/h_re.png" class="headwall" style="width:300%">
+</div>
   
-<header>
+
+ <header>
 <a href="index.html"><nav class="navbar">
     <img src="img/logo.png">
     <ul></a>
@@ -112,158 +170,208 @@
     </nav>
 </header>
 
-
-
-
-      
+   <section class="hidden top-section">
+   <div><h2 class="title7" id="gizatitle">Elegance Reborn: <br>Renaissance Attire</h2>
+   <p class="subtitle7">~Layers of fabric spoke of power, beauty, and the changing spirit of the world.~</p>
+   </div>
+   </section>   
+   
 <body style = "background-color:#cdcdcd">
   <main>
-    <div class="container">
-      <h1> The Rise of Elegance: Renaissance Fashion Reborn</h1>
-      <p style="font-size:22px;"><br> The Renaissance period, lasting from the 14th to the 17th century, was a time of great cultural rebirth and change in Europe. Unlike the Paleolithic era, when clothing was made mainly for survival, Renaissance fashion became a way to show wealth, status, and artistic expression. During this time, people began to wear beautifully designed clothes made from rich fabrics like silk and velvet, with bright colors, intricate patterns, and detailed decorations. Clothing was no longer just about protection — it was about style, identity, and power.</p>
+   <div class="container">
+     <section class="hidden glow-text">
+       <h4 style="font-size:35px;">
+         "Paleolithic fashion reveals not just survival, but the dawn of human creativity and identity."
+       </h4>
+     </section>
 
+     <br/>
+     <p style="font-size:22px;" >
+       The Renaissance period, lasting from the 14th to the 17th century, was a time of great cultural rebirth and
+       change in Europe. Unlike the Paleolithic era, when clothing was made mainly for survival, Renaissance fashion
+       became a way to show wealth, status, and artistic expression. During this time, people began to wear beautifully
+       designed clothes made from rich fabrics like silk and velvet, with bright colors, intricate patterns, and detailed
+       decorations. Clothing was no longer just about protection — it was about style, identity, and power.
+     </p>
+
+     <div class="flex-row hidden">
+       <div class="flex-image">
+         <img src="img/r_fashion.jpg" alt="Renaissance clothing illustration" />
+       </div>
+       <div class="flex-text">
+         <h4 class="glow-text" style="font-size:30px">👗 Why Clothing Was Important</h4>
+         <p>
+           Unlike the simple, functional clothing of the Paleolithic era,
+           <br />
+           Renaissance clothing reflected social rank and personal identity.
+           <br />
+           It was also influenced by:
+           <br />
+           Advances in textile production and tailoring techniques
+           <br />
+           New trade routes that brought luxurious fabrics like silk and velvet to Europe
+           <br />
+           Sumptuary laws that regulated who could wear certain colors or materials, reinforcing social classes
+           <br />
+           Clothing was a way to display power, wealth, and education, especially among the nobility and royalty
+         </p>
+       </div>
+     </div>
+
+     <div class="flex-row hidden">
+       <div class="flex-text">
+         <h4 class="glow-text" style="font-size:35px;">What They Wore ✨</h4>
+         <br />
+         <p>
+           Renaissance fashion was rich and elaborate, made from expensive materials such as silk, velvet, brocade, and
+           fine linen.
+           <br />
+           Some key features included:
+           <br />
+           Men wore doublets (fitted jackets), hose (tight-fitting pants), and capes
+           <br />
+           Women wore gowns with full skirts, tight bodices, and sometimes detachable sleeves
+           <br />
+           Both men and women used decorative elements like embroidery, jewels, and feathers
+           <br />
+           Clothing was often layered and structured with padding and stiff fabrics to shape the body
+         </p>
+       </div>
+       <div class="flex-image">
+         <img src="img/r_fashion2.jpg" alt="Renaissance clothing illustration" />
+       </div>
+     </div>
+
+     <br />
+
+     <div class="flex-row hidden">
+       <h4 style="font-size: 30px; margin-left: 120px; margin-top: 70px;" class="glow-text">
+         Example Clothes
+       </h4>
+       <br />
+       <div class="flex-image" style="display: flex; gap: 15px; height: 200px;">
+         <img src="img/r_fashion3.jpg" alt="Renaissance clothing example" />
+         <img src="img/r_fashion4.jpg" alt="Renaissance clothing example" />
+         <img src="img/r_fashion5.jpg" alt="Renaissance clothing example" />
+       </div>
+     </div>
+
+     <div class="flex-row hidden">
+       <div class="flex-image">
+         <img src="img/r_fashion7.jpg" alt="Renaissance clothing illustration" />
+       </div>
+       <div class="flex-text">
+         <h4 class="glow-text" style="font-size:35px">🪡 How Clothing Was Made</h4>
+         <p>
+           <br />
+           Tailors became skilled craftsmen, using advanced cutting and sewing techniques
+           <br /><br />
+           Fabrics were often imported from Italy, France, and the Ottoman Empire
+           <br /><br />
+           Clothing construction involved padding, boning, and sometimes metal supports to achieve the desired shapes
+           <br /><br />
+           Decorative stitching and embroidery were done by hand, often by highly trained artisans
+           <br /><br />
+           Buttons and laces became common for fastening clothes, replacing earlier simpler ties
+         </p>
+       </div>
+     </div>
+
+     <div class="flex-row hidden">
+       <div class="flex-text">
+         <h4 class="glow-text" style="font-size:35px">👑 Examples of Renaissance Fashion</h4>
+         <br />
+         <p>
+           Queen Elizabeth I of England
+           <br />
+           A fashion icon of the English Renaissance
+           <br /><br />
+           Known for:
+           High ruffled collars (called ruffs)
+           <br />
+           Wide, structured gowns with padded sleeves
+           <br />
+           Rich fabrics like silk, velvet, and gold-embroidered materials
+           <br />
+           Pearls, jewels, and symbolic embroidery (e.g. Tudor roses, phoenix)
+           <br />
+           Pale face makeup and red lips as part of the complete look
+           <br />
+           Her wardrobe reflected power, control, and divine royalty.
+         </p>
+       </div>
+       <div class="flex-image">
+         <img src="img/fashion_q.jpg" alt="Queen Elizabeth I portrait" />
+       </div>
+     </div>
+
+     <div class="flex-row hidden">
+       <div class="flex-text">
+         <p>
+           King Henry VIII of England
+           <br />
+           His fashion represented male Renaissance power.
+           <br /><br />
+           Known for:
+           Padded doublets, fur-lined cloaks, and massive sleeves
+           <br />
+           Codpieces (pouches over the groin area)
+           <br />
+           Rich fabrics like silk, velvet, and gold-embroidered materials
+           <br />
+           Bold colors and jewels sewn into clothes
+         </p>
+       </div>
+       <div class="flex-image">
+         <img src="img/fashion_h.jpg" alt="King Henry VIII portrait" />
+       </div>
+     </div>
+
+     <br /><br />
+
+     <div class="flex-row hidden">
+       <div class="flex-text">
+         <h4 class="glow-text" style="font-size:35px;">🧵 Notable Renaissance Fashion Tailors</h4>
+         <br />
+         <p>
+           Juan de Alcega
+           <br />
+           A Spanish tailor and author of one of the earliest known books on tailoring:
+           <br /><br />
+           Known for:
+           📖 Libro de Geometría, Práctica y Traça (Book of Geometry, Practice, and Pattern Drafting)
+           <br />
+           Included sewing patterns and mathematical techniques to cut fabric correctly.
+           <br />
+           His work helped standardize tailoring and influenced European fashion design.
+         </p>
+       </div>
+       <div class="flex-image">
+         <img src="img/tailor.jpg" alt="Juan de Alcega portrait" />
+         <div class="blank" style="margin-bottom: 30px;"></div>
+       </div>
+     </div>
+   </div>
    
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/r_fashion.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2>👗 Why Clothing Was Important</h2>
-		  <p>
-            Unlike the simple, functional clothing of the Paleolithic era, 
-          <br>Renaissance clothing reflected social rank and personal identity. 
-          <br>It was also influenced by:
-           <br> Advances in textile production and tailoring techniques
-          <br>
-        New trade routes that brought luxurious fabrics like silk and velvet to Europe
-          <br>
-            Sumptuary laws that regulated who could wear certain colors or materials, reinforcing social classes
-          <br>
-            Clothing was a way to display power, wealth, and education, especially among the nobility and royalty
-
-          </p>
-        </div>
-      </div>
-
-    
-      <div class="flex-row">
-        <div class="flex-text">
-          <h2> What They Wore ✨  </h2> <br>
-          <p>Renaissance fashion was rich and elaborate, made from expensive materials such as silk, velvet, brocade, and fine linen. <br> Some key features included:
-
-            <br> Men wore doublets (fitted jackets), hose (tight-fitting pants), and capes 
-<br>Women wore gowns with full skirts, tight bodices, and sometimes detachable sleeves
-  <br>Both men and women used decorative elements like embroidery, jewels, and feathers
-    <br>Clothing was often layered and structured with padding and stiff fabrics to shape the body
-</p>
-        </div>
-        <div class="flex-image">
-          <img src="img/r_fashion2.jpg">
-        </div>
-      </div>
-
-  <br>
-
-
-      <div class="flex-row">
-         <h2 style="font-size:30px;margin-left:120px;margin-top:70px;">  Example Clothes  </h2><br>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-          
-          <img src="img/r_fashion3.jpg" >
-          <img src="img/r_fashion4.jpg" >
-           <img src="img/r_fashion5.jpg" >
-        </div>
-     
-        </div>
-     
-    <div class="flex-row">
-      <div class="flex-image">
-      
-         <img src="img/r_fashion7.jpg">
-      </div>
-      <div class="flex-text">
-        <h2>🪡 How Clothing Was Made</h2>
-        <p><br>
-          Tailors became skilled craftsmen, using advanced cutting and sewing techniques
-          <br><br>
-          Fabrics were often imported from Italy, France, and the Ottoman Empire
-          <br><br>
-          Clothing construction involved padding, boning, and sometimes metal supports to achieve the desired shapes
-          <br><br>
-          Decorative stitching and embroidery were done by hand, often by highly trained artisans
-          <br><br>
-          Buttons and laces became common for fastening clothes, replacing earlier simpler ties
-        </p>
-      </div>
-    </div>
-
-
-            <div class="flex-row">
-              <div class="flex-text">
-                <h2> 👑 Examples of Renaissance Fashion  </h2> <br>
-                <p>Queen Elizabeth I of England <br>
-
-                  A fashion icon of the English Renaissance
-                  <br><br>Known for:
- High ruffled collars (called ruffs)
-                  <br>Wide, structured gowns with padded sleeves
-                  <br>Rich fabrics like silk, velvet, and gold-embroidered materials
-                  <br>Pearls, jewels, and symbolic embroidery (e.g. Tudor roses, phoenix)
-                  <br>Pale face makeup and red lips as part of the complete look
-                  <br>Her wardrobe reflected power, control, and divine royalty.
-
-
-      </p>
-              </div>
-              <div class="flex-image">
-                <img src="img/fashion_q.jpg">
-              </div>
-            </div>
-
-
-                  <div class="flex-row">
-                    <div class="flex-text">
-                    
-                      <p>King Henry VIII of England <br>
-
-                        His fashion represented male Renaissance power.
-                        <br><br>Known for:
-                        Padded doublets, fur-lined cloaks, and massive sleeves
-                        <br>Codpieces (pouches over the groin area)
-                        <br>Rich fabrics like silk, velvet, and gold-embroidered materials
-                        <br>Bold colors and jewels sewn into clothes
-                   
-
-            </p>
-                    </div>
-                    <div class="flex-image">
-                      <img src="img/fashion_h.jpg">
-                    </div>
-                  </div>
-<br><br>
-      <div class="flex-row">
-        <div class="flex-text">
-           <h2> 🧵 Notable Renaissance Fashion Tailors </h2> <br>
-          <p> Juan de Alcega <br>
-
-            A Spanish tailor and author of one of the earliest known books on tailoring:
-            <br><br>Known for:
-            📖 Libro de Geometría, Práctica y Traça (Book of Geometry, Practice, and Pattern Drafting)
-            <br>CIncluded sewing patterns and mathematical techniques to cut fabric correctly.
-            <br>His work helped standardize tailoring and influenced European fashion design.
-        
-
-
-      </p>
-        </div>
-        <div class="flex-image">
-          <img src="img/tailor.jpg">
-          <div class="blank" style="margin-bottom:30px;">
-        </div>
-      </div>
-      
-    </div>
   </main>
+  <script>
+     // Scroll-triggered fade-in effect using IntersectionObserver
+     const hiddenElements = document.querySelectorAll('.hidden');
+
+     const observer = new IntersectionObserver((entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add('show');
+         } else {
+           entry.target.classList.remove('show');
+         }
+       });
+     }, {
+       threshold: 0.5,
+     });
+
+     hiddenElements.forEach((el) => observer.observe(el));
+   </script>
 
     </body>
     </html>

@@ -12,256 +12,270 @@
   <style>
 
 
-    .flex-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 30px;
-    }
+      .flex-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-top: 30px;
+      }
 
-    .flex-image img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-    }
+      .flex-image img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+      }
 
-    .flex-text {
-      max-width: 600px;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      text-align: center;
-    }
+      .flex-text {
+        max-width: 600px;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        text-align: center;
+      }
+	
+  	.flex-text p{
+  		font-size:22px;
+  	}
 
-    @keyframes popIn {
-      0% {
-        transform: scale(0.8);
+      @keyframes popIn {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .headwall {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      }
+      .headwall-wrapper {
+         width: 100%;
+         height: 350px;
+         overflow: hidden;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+         }
+      .container {
+        animation: popIn 1.3s ease-out forwards;
+        transform-origin: center;
         opacity: 0;
       }
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
+      section.hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(3px);
+        transition: all 1s ease;
       }
-    }
 
-    .container {
-      animation: popIn 3.7s ease-out forwards;
-      transform-origin: center;
-      opacity: 0;
-    }
+      section.hidden.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .flex-row {
+          flex-direction: column;
+          margin: 30px 20px;
+        }
+
+        .flex-text {
+          text-align: center;
+        }
+
+        .flex-image img {
+          max-width: 90vw;
+        }
+
+        .example-clothes {
+          justify-content: center;
+        }
+
+        .headwall-wrapper {
+          height: 250px;
+        }
+
+        section.top-section h2.title7 {
+          font-size: 2.5rem;
+        }
+
+        section.top-section p.subtitle7 {
+          font-size: 1rem;
+        }
+      }
+
+      /* MOBILE VIEW */
+      @media (max-width: 768px) {
+
+        .container {
+          margin-top: 550px;
+        }
+      }
 
     
 
-    /* MOBILE VIEW */
-    @media (max-width: 768px) {
-
-      .container {
-        margin-top: 550px;
-      }
-    }
 
 
 
   </style>
       </head>
-<header>
-<a href="index.html"><nav class="navbar">
-    <img src="img/logo.png">
-    <ul></a>
+	      <div class="headwall-wrapper">
+	    <img src="img/h_jz.png" class="headwall" style="width:300%">
+	  </div>
+  <header>
+ <a href="index.html"><nav class="navbar">
+     <img src="img/logo.png">
+     <ul></a>
 
-<li class="dropdown"><a href="index.html">HOME</a>
+ <li class="dropdown"><a href="index.html">HOME</a>
         
-<li class="dropdown"><a href="">TIMELINE</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic.html">Paleolithic</a></li>
-    <li><a href="renaissance.html">Renaissance</a></li>
-    <li><a href="victorian.html">Victorian</a></li>
-    <li><a href="jazz.html">1920s</a></li>
-    <li><a href="modern.html">Modern</a></li>
-</ul></li>
+ <li class="dropdown"><a href="">TIMELINE</a>
+ <ul class="dropdown-content">
+     <li><a href="paleolithic.html">Paleolithic</a></li>
+     <li><a href="renaissance.html">Renaissance</a></li>
+     <li><a href="victorian.html">Victorian</a></li>
+     <li><a href="jazz.html">1920s</a></li>
+     <li><a href="modern.html">Modern</a></li>
+ </ul></li>
 
-<li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
-<ul class="dropdown-content">
-    <li><a href="giza.html">Giza</a></li>
-    <li><a href="babylon.html">Babylon</a></li>
-    <li><a href="artemis.html">Artemis</a></li>
-    <li><a href="zeus.html">Statue Of Zeus</a></li>
-    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
-    <li><a href="rhodes.html">Rhodes</a></li>
-    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
-</li></ul>
+ <li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
+ <ul class="dropdown-content">
+     <li><a href="giza.html">Giza</a></li>
+     <li><a href="babylon.html">Babylon</a></li>
+     <li><a href="artemis.html">Artemis</a></li>
+     <li><a href="zeus.html">Statue Of Zeus</a></li>
+     <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
+     <li><a href="rhodes.html">Rhodes</a></li>
+     <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
+ </li></ul>
 
-                    <li class="dropdown"><a href="fashion.html">FASHION</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
-    <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
-    <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
-    <li><a href="1920_fashion.html">1920s Fashion</a></li>
-    <li><a href="modern_fashion.html">Modern Fashion</a></li>
-</li></ul>
+                     <li class="dropdown"><a href="fashion.html">FASHION</a>
+ <ul class="dropdown-content">
+     <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
+     <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
+     <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
+     <li><a href="1920_fashion.html">1920s Fashion</a></li>
+     <li><a href="modern_fashion.html">Modern Fashion</a></li>
+ </li></ul>
 
-<li class="dropdown"><a href="art.html">ART PIECES</a>
-    </nav>
-</header>
+ <li class="dropdown"><a href="art.html">ART PIECES</a>
+     </nav>
+ </header>
 
+   <section class="hidden top-section">
+   <div><h2 class="title7" id="gizatitle">The Rhythm of Style: 1920s Jazz Age Fashion Ignites 🎷</h2>
+   <p class="subtitle7">~Style swayed with the sound of jazz—bold, dazzling, and alive with modern spirit.~</p>
+   </div>
+   </section>   
       
 <body style = "background-color:#cdcdcd">
   <main>
     <div class="container">
-      <h1> 🎷The Rhythm of Style: 1920s Jazz Age Fashion Ignites</h1>
-      <p><br> The 1920s — often called the Jazz Age or the Roaring Twenties — marked a dramatic break from the formality and structure of previous eras. After the trauma of World War I, people embraced a modern lifestyle filled with jazz music, social freedom, and expressive fashion.
-      Clothing in the 1920s symbolized rebellion, liberation, and excitement, especially among women who rejected corsets and embraced the bold flapper look.
+  <section class="hidden glow-text">
+    <h4 style="font-size:35px;">
+      "Jazz Age fashion captured the rhythm of change, where clothing danced with freedom, rebellion, and modern identity."
+    </h4>
+  </section>
+  
 
-</p>
-
-   
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/1920.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2>👗 Why Clothing Was Important
-</h2>
-          1920s fashion was more than just style — it was a cultural statement of liberation and joy.
-          <br>The end of World War I and a cultural shift toward freedom and optimism
-          <br>It was also influenced by:
-           <br>The rise of jazz music, dance clubs, and the Charleston craze
-          <br>
-          Women gaining the right to vote (in many countries), symbolizing growing independence
-          <br>
-          Hollywood film stars influencing everyday fashion
-          <br>
-          A desire to break with tradition and embrace new forms of identity and fun
-         
-          </p>
-        </div>
+ <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text"c>What They Wore ✨</h4><br>
+        <p>
+          1920s fashion was sleek, bold, and built for movement.
+          <br>Key features included:
+          <br>• Flappers: straight-cut, beaded or fringed dresses, cloche hats, bobbed hair
+          <br>• Men: tailored suits, wide trousers, bow ties, two-tone shoes
+          <br>• Dropped waists, sleeveless styles, bold geometric prints
+          <br>• Feathers, sequins, beads in evening dress
+          <br>• Accessories: long pearls, feather headbands, cigarette holders  
+          <br>Evening wear shimmered—perfect for dancing the night away
+        </p>
       </div>
-
-    
-      <div class="flex-row">
-        <div class="flex-text">
-          <h2> What They Wore ✨  </h2> <br>
-          <p>1920s fashion was sleek, bold, and meant to move.
-            <br> Some key features included:
-
-            <br> Flappers: young women who wore short, straight-cut dresses (often beaded or fringed), cloche hats, and bobbed hair
-<br>Men: wore tailored suits with wide-legged trousers, bow ties, and two-tone shoes
-  <br>Men: Tailcoats, waistcoats (vests), top hats, and trousers
-    <br>Dropped waistlines, sleeveless dresses, and bold geometric patterns
-            <br>Feathers, fringe, sequins, and beads were popular for evening wear
-            <br>Accessories like long pearl necklaces, feather headbands, and cigarette holders completed the look
-<br>Evening wear shimmered — perfect for dancing the night away
-
-            
-</p>
-        </div>
-        <div class="flex-image">
-          <img src="img/jazz8.jpg">
-        </div>
-      </div>
-
-  <br>
-
-
-      <div class="flex-row">
-         <h2 style="font-size:30px;margin-left:120px;margin-top:70px;">  Example Clothes  </h2><br>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-          
-          <img src="img/jazz1.jpg" >
-          <img src="img/jazz2.jpg" >
-           <img src="img/jazz3.jpg" >
-        </div>
-     
-        </div>
-     
-    <div class="flex-row">
       <div class="flex-image">
-      
-         <img src="img/jazz4.jpg">
+        <img src="img/jazz8.jpg" alt="Jazz Age evening wear">
+      </div>
+    </div>
+
+    <!-- Example Clothes Grid -->
+    <div class="flex-row hidden">
+      <h4 style="width:100%;" class="glow-text">Example Clothes</h4><br>
+      <div class="flex-image" style="display:flex;gap:15px;">
+    
+        <img src="img/jazz2.jpg" alt="Men's suit;">
+        <img src="img/jazz3.jpg" alt="Jazz Age accessory">
+      </div>
+    </div>
+
+    <!-- Manufacturing Innovations -->
+    <div class="flex-row hidden">
+      <div class="flex-image">
+        <img src="img/jazz4.jpg" alt="1920s sewing machine">
       </div>
       <div class="flex-text">
-        <h2>🪡 How Clothing Was Made</h2>
-        <p><br>
-          Clothing production in the 1920s benefited from industrial advances and modern design ideas:
-          <br><br>
-          Ready-to-wear fashion became widespread thanks to mass production
-          <br><br>
-          Synthetic fabrics like rayon entered the market
-          <br><br>
-          Ready-to-wear clothing emerged due to factory production
-          <br><br>
-          Simpler silhouettes made it easier for women to sew their own clothes
-          <br><br>
-          Art Deco influences inspired bold, geometric patterns
-          <br><br>
-          Designers experimented with draping, beadwork, and lightweight fabrics
-          <br><br>
-          Fashion magazines and mail-order catalogs spread new styles quickly
-          <br> 
+        <h4 style="font-size:35px;"class="glow-text">🪡 How Clothing Was Made</h4>
+        <p>
+          1920s production benefited from industrial advances:
+          <br><br>• Ready-to-wear became widely available via mass production.
+          <br><br>• Rayon and other synthetics entered the market.
+          <br><br>• Simple silhouettes made home sewing easier.
+          <br><br>• Art Deco inspired bold geometric prints and beadwork.
+          <br><br>• Fashion mags and catalogs spread trends fast.
         </p>
       </div>
     </div>
 
-
-            <div class="flex-row">
-              <div class="flex-text">
-                <h2> 👑 Fashion Icons of the Jazz Age  </h2> <br>
-                <p>Josephine Baker <br>
-
-                  American-born French entertainer and activist
-                  <br><br>Known for her daring costumes, banana skirts, and groundbreaking stage presence
-                  <br>Represented jazz-age glamour and unapologetic individuality
-
-
-      </p>
-              </div>
-              <div class="flex-image">
-                <img src="img/jazz5.jpg">
-              </div>
-            </div>
-
-
-                  <div class="flex-row">
-                    <div class="flex-text">
-                    
-                      <p>Clara Bow <br>
-
-                        The original “It Girl” of silent films
-                        <br><br>Known for:
-                        Her flapper style and expressive acting made her a 1920s trendsetter
-                        <br>Known for finger waves, short hemlines, and sultry makeup
-                      
-
-                   
-
-            </p>
-                    </div>
-                    <div class="flex-image">
-                      <img src="img/jazz6.jpg">
-                    </div>
-                  </div>
-<br><br>
-      <div class="flex-row">
-        <div class="flex-text">
-           <h2> 🧵 Notable Designers of the Era </h2> <br>
-          <p> Coco Chanel <br>
-
-            Revolutionized women’s fashion with casual elegance
-            <br><br>Known for:
-            📖 Founding the House of Worth in Paris, which dressed royalty and the elite
-            <br>Introduced jersey fabric into everyday wear
-            <br>Popularized the little black dress and loose-fitting silhouettes
-            <br>Advocated for comfort, simplicity, and modern womanhood
-      
-      </p>
-        </div>
-        <div class="flex-image">
-          <img src="img/jazz7.jpg">
-          <div class="blank" style="margin-bottom:30px;">
-        </div>
+    <!-- Fashion Icons -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 style="font-size:35px;"class="glow-text">👑 Fashion Icons of the Jazz Age</h4><br>
+        <p>
+          <strong>Josephine Baker</strong><br>
+          American-born French entertainer: known for daring costumes, banana skirts, unapologetic individuality.
+        </p>
       </div>
-      
+      <div class="flex-image">
+        <img src="img/jazz5.jpg" alt="Josephine Baker">
+      </div>
     </div>
+
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <p>  <strong>Clara Bow </strong><br>
+        <p>
+          The original “It Girl” of silent films—famed for finger waves, short hemlines, and sultry makeup.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/jazz6.jpg" alt="Clara Bow">
+      </div>
+    </div>
+
+    <!-- Notable Designers -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 style="font-size:35px;" class="glow-text">🧵 Notable Designers of the Era</h4><br>
+        <p>
+          <strong>Coco Chanel</strong><br>
+          Revolutionized women’s fashion with casual elegance:
+          <br>• Introduced jersey fabric<br>
+          • Popularized the little black dress and loose silhouettes<br>
+          • Championed comfort, simplicity, and modern womanhood
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/jazz7.jpg" alt="Coco Chanel">
+      </div>
+    </div>
+
+  </div>
   </main>
 
     </body>

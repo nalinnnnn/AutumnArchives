@@ -52,15 +52,24 @@
     }
 
     .container {
-      animation: popIn 3.7s ease-out forwards;
+      animation: popIn 1.3s ease-out forwards;
       transform-origin: center;
       opacity: 0;
+	  
     }
 
     .container p{
       font-size:25px;
     }
-    
+    .headwall {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    }
+	
+	
 
     /* MOBILE VIEW */
     @media (max-width: 768px) {
@@ -69,42 +78,82 @@
         margin-top: 550px;
       }
     }
+    .headwall-wrapper {
+       width: 100%;
+       height: 350px;
+       overflow: hidden;
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+       }
+	 
 
+	   /* Scroll Animation */
+	       section.hidden {
+	         opacity: 0;
+	         transform: translateY(40px);
+	         filter: blur(3px);
+	         transition: all 1s ease;
+	       }
 
+	       section.hidden.show {
+	         opacity: 1;
+	         transform: translateY(0);
+	         filter: blur(0);
+	       }
+
+	       /* Responsive */
+	       @media (max-width: 768px) {
+	         .flex-row {
+	           flex-direction: column;
+	           margin: 30px 20px;
+	         }
+
+	         .flex-text {
+	           text-align: center;
+	         }
+
+	         .flex-image img {
+	           max-width: 90vw;
+	         }
+
+	         .example-clothes {
+	           justify-content: center;
+	         }
+
+	         .headwall-wrapper {
+	           height: 250px;
+	         }
+
+	         section.top-section h2.title7 {
+	           font-size: 2.5rem;
+	         }
+
+	         section.top-section p.subtitle7 {
+	           font-size: 1rem;
+	         }
+	       }
 
   </style>
 </head>
 
     <div class="headwall-wrapper">
-  <img src="img/h_pal.png" class="headwall" alt="">
+  <img src="img/h_pal.png" class="headwall" style="width:300%">
 </div>
   
-<header>
+ <header>
 <a href="index.html"><nav class="navbar">
     <img src="img/logo.png">
     <ul></a>
 
-<li class="dropdown"><a href="index.html">HOME</a>
         
-<li class="dropdown"><a href="">TIMELINE</a>
-<ul class="dropdown-content">
+  <li class="dropdown"><a href="">TIMELINE</a>
+  <ul class="dropdown-content">
     <li><a href="paleolithic.html">Paleolithic</a></li>
     <li><a href="renaissance.html">Renaissance</a></li>
     <li><a href="victorian.html">Victorian</a></li>
     <li><a href="jazz.html">1920s</a></li>
     <li><a href="modern.html">Modern</a></li>
-</ul></li>
+  </ul></li>
 
-<li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
-<ul class="dropdown-content">
-    <li><a href="giza.html">Giza</a></li>
-    <li><a href="babylon.html">Babylon</a></li>
-    <li><a href="artemis.html">Artemis</a></li>
-    <li><a href="zeus.html">Statue Of Zeus</a></li>
-    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
-    <li><a href="rhodes.html">Rhodes</a></li>
-    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
-</li></ul>
 
                     <li class="dropdown"><a href="fashion.html">FASHION</a>
 <ul class="dropdown-content">
@@ -113,110 +162,145 @@
     <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
     <li><a href="1920_fashion.html">1920s Fashion</a></li>
     <li><a href="modern_fashion.html">Modern Fashion</a></li>
-</li></ul>
-
-<li class="dropdown"><a href="art.html">ART PIECES</a>
-    </nav>
-</header>
+  </li></ul>
 
 
 
+  <li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
+<ul class="dropdown-content">
+    <li><a href="giza.html">Giza</a></li>
+    <li><a href="babylon.html">Babylon</a></li>
+    <li><a href="artemis.html">Artemis</a></li>
+    <li><a href="zeus.html">Statue Of Zeus</a></li>
+    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
+    <li><a href="rhodes.html">Rhodes</a></li>
+    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
+  </li></ul>
 
+  <li class="dropdown"><a href="art.html">ART PIECES</a>
+
+
+  <li class="dropdown"><a href="index.html">HOME</a>
+      </nav>
+  </header>
+
+
+
+
+<section class="hidden top-section">
+<div><h2 class="title7" id="gizatitle">The Dawn of Clothing: Prehistoric Attire</h2>
+<p class="subtitle7">~Woven not just from hide, but from survival, symbolism, and the first sparks of human expression.~</p>
+</div>
+</section>
 
 
 <body style="background-color:#cdcdcd">
   <main>
-    <div class="container">
-      <h1>The Dawn of Clothing: Prehistoric Attire</h1>
-      <p><br> The Paleolithic period, also known as the Old Stone Age (roughly 2.5 million to 10,000 BCE), marks the
-        earliest era of human history. During this time, early humans transitioned from relying solely on nature to
-        crafting tools, controlling fire, and importantly—creating clothing for survival.</p>
+    <div class="container" style="margin-top:130px;">
+   
 
+    <section class="hidden glow-text" >
+        <h4 style="font-size:35px;">"Paleolithic fashion reveals not just survival, but the dawn of human creativity and identity."</h4>
+    </section>
+<div class="flex-row hidden">
+  <div class="flex-image">
+    <img src="img/area2.jpg" alt="Paleolithic clothing illustration" />
+  </div>
+  <div class="flex-text">
+     <h4 style="font-size:35px">❄️ Why Clothing Was Necessary</h4>
+    <p>
+      <br />
+      Paleolithic humans lived during a time when climate conditions varied greatly. <br />
+      While Ice Ages occurred frequently, not all regions were frozen — <br />
+      Many people also lived in warmer, tropical, or arid areas. Because of this, clothing
+      wasn't just for cold weather — it served multiple important purposes depending on the
+      environment:
+      <br /><br />
+      * Retain body heat in cold, icy regions during glacial periods <br />
+      * Protect skin from the sun in hot, open environments like deserts or savannas <br />
+      * Shield the body from insect bites, rough terrain, and thorns in forests or jungles <br />
+      Aid in mobility during hunting and gathering
+    </p>
+  </div>
+</div>
 
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/area2.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2>❄️ Why Clothing Was Necessary</h2>
-          <p><br>
-            Paleolithic humans lived during a time when climate conditions varied greatly. <br> While Ice Ages occurred
-            frequently, not all regions were frozen —
-            <br> Many people also lived in warmer, tropical, or arid areas.
-            Because of this, clothing wasn't just for cold weather — it served multiple important purposes depending on
-            the environment:
-            <br>
-            <br> * Retain body heat in cold, icy regions during glacial periods
-            <br> * Protect skin from the sun in hot, open environments like deserts or savannas
-            <br> * Shield the body from insect bites, rough terrain, and thorns in forests or jungles
-            <br> Aid in mobility during hunting and gathering
-          </p>
-        </div>
-      </div>
+<div class="flex-row hidden">
+  <div class="flex-text">
+     <h4 style="font-size:35px"> What They Wore ✨ </h4> <br>
+    <p>
+      Paleolithic clothing was simple,<br />
+      made from the materials available in nature, <br />
+      especially: Animal hides and furs.
+      <br />
+      After hunting animals for food, their skins were cleaned, dried, and worn for warmth.
 
+      Plant fibers: In warmer areas, bark, leaves, and grasses might have been woven into basic coverings.
+    </p>
+  </div>
+  <div class="flex-image">
+    <img src="img/area.jpg" alt="Bone needles and stitching tools" />
+  </div>
+</div>
 
-      <div class="flex-row">
-        <div class="flex-text">
-          <h2> What They Wore ✨ </h2> <br>
-          <p>Paleolithic clothing was simple,<br> made from the materials available in nature, <br>especially: Animal
-            hides and furs.
-            <br> After hunting animals for food, their skins were cleaned, dried, and worn for warmth.
+<br />
 
-            Plant fibers: In warmer areas, bark, leaves, and grasses might have been woven into basic coverings.
+<div class="flex-row hidden">
+  <h2 style="font-size:30px;margin-left:120px;margin-top:70px;"> Example Clothes </h2><br />
+  <div class="flex-image" style="display: flex; gap: 15px; height: 200px;">
+    <img src="img/p_fashion.jpg" alt="Paleolithic clothing illustration" />
+    <img src="img/p_fashion2.jpg" alt="Paleolithic clothing illustration" />
+    <img src="img/p_fashion3.jpg" alt="Paleolithic clothing illustration" />
+  </div>
+</div>
 
-          </p>
-        </div>
-        <div class="flex-image">
-          <img src="img/area.jpg" alt="Bone needles and stitching tools">
-        </div>
-      </div>
+<div class="flex-row hidden">
+  <div class="flex-image">
+    <img src="img/t_fashion.jpg" alt="Paleolithic clothing illustration" style="margin-bottom:5px;" />
+    <img src="img/t_fashion2.jpg" alt="Paleolithic clothing illustration" />
+  </div>
+  <div class="flex-text">
+    <h4 style="font-size:35px">🪡 How Clothing Was Made</h4>
+    <p>
+      <br />
+      Step 1: Skinning the animal After killing an animal, they would carefully remove the skin.
+      <br /><br />
+      Step 2: Cleaning and drying They scraped off the meat and fat, then stretched and dried the hide
+      to make it soft.
+      <br /><br />
+      Step 3: Softening the hide Sometimes they used animal , fat, or smoke to tan the hides (a way to
+      make leather so it doesn’t rot).
+      <br /><br />
+      Step 4: Shaping and cutting They cut the hide using stone tools like sharp flint.
+      <br /><br />
+      Step 5: Stitching pieces together They used animal sinew (tendon) or plant fibers as thread,
+      and bone needles to sew pieces together.
+    </p>
+  </div>
+</div>
 
-      <br>
-
-
-      <div class="flex-row">
-        <h2 style="font-size:30px;margin-left:120px;margin-top:70px;"> Example Clothes </h2><br>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-
-          <img src="img/p_fashion.jpg" alt="Paleolithic clothing illustration">
-          <img src="img/p_fashion2.jpg" alt="Paleolithic clothing illustration">
-          <img src="img/p_fashion3.jpg" alt="Paleolithic clothing illustration">
-        </div>
-
-      </div>
-
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/t_fashion.jpg" alt="Paleolithic clothing illustration" style="margin-bottom:5px;">
-          <img src="img/t_fashion2.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2>🪡 How Clothing Was Made</h2>
-          <p><br>
-            Step 1: Skinning the animal
-            After killing an animal, they would carefully remove the skin.
-            <br><br>
-            Step 2: Cleaning and drying
-            They scraped off the meat and fat, then stretched and dried the hide to make it soft.
-            <br><br>
-            Step 3: Softening the hide
-            Sometimes they used animal , fat, or smoke to tan the hides (a way to make leather so it doesn’t rot).
-            <br><br>
-            Step 4: Shaping and cutting
-            They cut the hide using stone tools like sharp flint.
-            <br><br>
-            Step 5: Stitching pieces together
-            They used animal sinew (tendon) or plant fibers as thread, and bone needles to sew pieces together.
-
-          </p>
-        </div>
-      </div>
 
 
 
     </div>
   </main>
+ <script>
+    // Scroll-triggered fade-in effect using IntersectionObserver
+    const hiddenElements = document.querySelectorAll('.hidden');
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, {
+      threshold: 0.5,
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+  </script>
 </body>
  
   

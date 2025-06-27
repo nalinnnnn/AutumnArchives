@@ -11,254 +11,302 @@
 
    <style>
 
+       .flex-row {
+         display: flex;
+         align-items: flex-start;
+         gap: 30px;
+         margin-top: 30px;
+       }
 
-    .flex-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 30px;
-    }
+       .flex-image img {
+         max-width: 300px;
+         height: auto;
+         border-radius: 8px;
+       }
 
-    .flex-image img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-    }
+       .flex-text {
+         max-width: 600px;
+         font-family: 'Roboto', sans-serif;
+         color: #333;
+         text-align: center;
+       }
+	
+   	.flex-text p{
+   		font-size:22px;
+   	}
 
-    .flex-text {
-      max-width: 600px;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      text-align: center;
-    }
+       @keyframes popIn {
+         0% {
+           transform: scale(0.8);
+           opacity: 0;
+         }
 
-    @keyframes popIn {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
+         100% {
+           transform: scale(1);
+           opacity: 1;
+         }
+       }
+       .headwall {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: top;
+       display: block;
+       }
+       .headwall-wrapper {
+          width: 100%;
+          height: 350px;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+          }
+       .container {
+         animation: popIn 1.3s ease-out forwards;
+         transform-origin: center;
+         opacity: 0;
+       }
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+       section.hidden {
+         opacity: 0;
+         transform: translateY(40px);
+         filter: blur(3px);
+         transition: all 1s ease;
+       }
 
-    .container {
-      animation: popIn 3.7s ease-out forwards;
-      transform-origin: center;
-      opacity: 0;
-    }
+       section.hidden.show {
+         opacity: 1;
+         transform: translateY(0);
+         filter: blur(0);
+       }
+
+       /* Responsive */
+       @media (max-width: 768px) {
+         .flex-row {
+           flex-direction: column;
+           margin: 30px 20px;
+         }
+
+         .flex-text {
+           text-align: center;
+         }
+
+         .flex-image img {
+           max-width: 90vw;
+         }
+
+         .example-clothes {
+           justify-content: center;
+         }
+
+         .headwall-wrapper {
+           height: 250px;
+         }
+
+         section.top-section h2.title7 {
+           font-size: 2.5rem;
+         }
+
+         section.top-section p.subtitle7 {
+           font-size: 1rem;
+         }
+       }
+
+       /* MOBILE VIEW */
+       @media (max-width: 768px) {
+
+         .container {
+           margin-top: 550px;
+         }
+       }
 
     
 
-    /* MOBILE VIEW */
-    @media (max-width: 768px) {
-
-      .container {
-        margin-top: 550px;
-      }
-    }
+  }
 
 
 
   </style>
       </head>
 
+	      <div class="headwall-wrapper">
+	    <img src="img/h_mo.png" class="headwall" style="width:300%">
+	  </div>
+  <header>
+ <a href="index.html"><nav class="navbar">
+     <img src="img/logo.png">
+     <ul></a>
 
- <header>
-<a href="index.html"><nav class="navbar">
-    <img src="img/logo.png">
-    <ul></a>
-
-<li class="dropdown"><a href="index.html">HOME</a>
+ <li class="dropdown"><a href="index.html">HOME</a>
         
-<li class="dropdown"><a href="">TIMELINE</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic.html">Paleolithic</a></li>
-    <li><a href="renaissance.html">Renaissance</a></li>
-    <li><a href="victorian.html">Victorian</a></li>
-    <li><a href="jazz.html">1920s</a></li>
-    <li><a href="modern.html">Modern</a></li>
-</ul></li>
+ <li class="dropdown"><a href="">TIMELINE</a>
+ <ul class="dropdown-content">
+     <li><a href="paleolithic.html">Paleolithic</a></li>
+     <li><a href="renaissance.html">Renaissance</a></li>
+     <li><a href="victorian.html">Victorian</a></li>
+     <li><a href="jazz.html">1920s</a></li>
+     <li><a href="modern.html">Modern</a></li>
+ </ul></li>
 
-<li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
-<ul class="dropdown-content">
-    <li><a href="giza.html">Giza</a></li>
-    <li><a href="babylon.html">Babylon</a></li>
-    <li><a href="artemis.html">Artemis</a></li>
-    <li><a href="zeus.html">Statue Of Zeus</a></li>
-    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
-    <li><a href="rhodes.html">Rhodes</a></li>
-    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
-</li></ul>
+ <li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
+ <ul class="dropdown-content">
+     <li><a href="giza.html">Giza</a></li>
+     <li><a href="babylon.html">Babylon</a></li>
+     <li><a href="artemis.html">Artemis</a></li>
+     <li><a href="zeus.html">Statue Of Zeus</a></li>
+     <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
+     <li><a href="rhodes.html">Rhodes</a></li>
+     <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
+ </li></ul>
 
-                    <li class="dropdown"><a href="fashion.html">FASHION</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
-    <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
-    <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
-    <li><a href="1920_fashion.html">1920s Fashion</a></li>
-    <li><a href="modern_fashion.html">Modern Fashion</a></li>
-</li></ul>
+                     <li class="dropdown"><a href="fashion.html">FASHION</a>
+ <ul class="dropdown-content">
+     <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
+     <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
+     <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
+     <li><a href="1920_fashion.html">1920s Fashion</a></li>
+     <li><a href="modern_fashion.html">Modern Fashion</a></li>
+ </li></ul>
 
-<li class="dropdown"><a href="art.html">ART PIECES</a>
-    </nav>
-</header>
-
+ <li class="dropdown"><a href="art.html">ART PIECES</a>
+     </nav>
+ </header>
+ 
+   <section class="hidden top-section">
+   <div><h2 class="title7" id="gizatitle">  The Era of Identity: <br>Modern Fashion Unbound 👟</h2>
+   <p class="subtitle7">~Threads today speak louder than ever—fluid, fearless, and shaped by the voice of individuality.</p>
+   </div>
+   </section>
 <body style = "background-color:#cdcdcd">
   <main>
     <div class="container">
-      <h1> 👟 The Era of Identity: Modern Fashion Unbound</h1>
-      <p><br> Modern fashion — spanning from the late 20th century into the 21st — is defined by individual expression, technological innovation, and global influence. Unlike past eras shaped by strict social codes or dominant silhouettes, today’s fashion embraces diversity, sustainability, and freedom of style.
-      From streetwear to couture, modern fashion reflects a world that is constantly evolving.
-
-</p>
+    <section class="hidden glow-text">
+      <h4 style="font-size:35px;">
+        "The Modern Era is defined by rapid technological advancement, shifting cultural norms, and a growing focus on global connectivity, individual rights, and sustainability."
+      </h4>
+    </section>
+    
 
    
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/m1.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2 style="margin-top:160px">Why Clothing Is Important Today
-</h2>
-          Fashion now plays a vital role in shaping personal identity, culture, and global conversation.
-          Key influences include:
-          <br>Social media and influencer culture driving fast trend cycles
-          <br>A growing awareness of sustainability, ethics, and environmental impact
-           <br>Diversity in representation — gender-fluid fashion, inclusive sizing, and cultural fusion
-        <br>
-          </p>
-        </div>
-      </div>
-
-    
-      <div class="flex-row">
-        <div class="flex-text">
-          <h2> 👕 What We Wear Now  </h2> <br>
-          <p>There’s no single dominant style in modern fashion — instead, it's a mosaic of trends, subcultures, and influences.
-            <br> Some key features included:
-
-            <br> There’s no single dominant style in modern fashion — instead, it's a mosaic of trends, subcultures, and influences.
-<br>Sustainable/Slow Fashion: Natural fibers, recycled materials, and upcycled pieces
-  <br>Athleisure: Blending comfort and function — yoga pants, trainers, and sporty silhouettes
-    <br>High fashion meets casual: Mixing luxury items (like designer bags or heels) with basics (like jeans or tees)
-            <br>Gender-fluid clothing: Unisex cuts, skirts for men, non-binary collections
-            <br>Techwear: Futuristic, functional pieces often with waterproofing, modular storage, and sci-fi aesthetics
-            <br>Cultural fusion: Designers draw on global traditions, from African prints to Japanese minimalism
-</p>
-        </div>
-        <div class="flex-image">
-          <img src="img/m5.jpg">
-        </div>
-      </div>
-
-  <br>
-
-
-      <div class="flex-row">
-         <h2 style="font-size:30px;margin-left:120px;margin-top:70px;">  Example Clothes  </h2><br>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-          
-          <img src="img/m2.jpg" >
-          <img src="img/m3.jpg" >
-           <img src="img/m6.jpg" >
-        </div>
-     
-        </div>
-     
-    <div class="flex-row">
+    <div class="flex-row hidden">
       <div class="flex-image">
-      
-         <img src="img/m7.jpg">
+        <img src="img/m1.jpg" alt="Modern fashion illustration">
       </div>
       <div class="flex-text">
-        <h2>🧵 How Clothing Is Made Today</h2>
-        <p><br>
-          Fashion production now ranges from handcrafted couture to automated mass production:
-          <br><br>
-          Fast fashion brands use algorithm-driven design, producing clothes within weeks
-          <br><br>
-          Sustainability concerns have led to innovations in biodegradable and recycled textiles
-          <br><br>
-          Technologies like 3D printing, AI design, and custom fit apps are reshaping the industry
-          <br><br>
-          Local artisans and small-batch designers offer alternatives to global supply chains
-          <br><br>
-    
+        <h4 style="font-size:35px;" class="glow-text">Why Clothing Is <br>Important Today</h4> <br>
+        <p>
+          Fashion now plays a vital role in shaping personal identity, culture, and global conversation. Key influences include:
+          <br>• Social media & influencer culture driving fast trend cycles
+          <br>• A growing awareness of sustainability, ethics, and environmental impact
+          <br>• Diversity in representation—gender-fluid fashion, inclusive sizing, cultural fusion
         </p>
       </div>
     </div>
 
+    <!-- What We Wear Now -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text">👕 What We Wear Now</h4><br>
+        <p>
+          There’s no single dominant style—instead, a mosaic of trends, subcultures, and influences:
+          <br>• Sustainable/Slow Fashion: natural & recycled materials
+          <br>• Athleisure: fitness meets streetwear
+          <br>• High fashion meets casual: luxury + basics
+          <br>• Gender-fluid clothing & uni-sex collections
+          <br>• Techwear: functional, futuristic designs
+          <br>• Cultural fusion: global aesthetics inspire designers
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m5.jpg" alt="Modern blended styles">
+      </div>
+    </div>
 
-            <div class="flex-row">
-              <div class="flex-text">
-                <h2> 🌍 Icons of Modern Fashion </h2> <br>
-                <p>Zendaya<br>
+    <!-- Example Clothes Grid -->
+    <div class="flex-row hidden">
+      <h4 style="width:100%;" class="glow-text">Example Clothes</h4><br>
+      <div class="flex-image" style="display:flex;gap:15px;">
+        <img src="img/m2.jpg" alt="Streetwear example">
+        <img src="img/m3.jpg" alt="Sustainable fashion example">
+       
+      </div>
+    </div>
 
-                  Actress, activist, and fashion chameleon
-                  <br><br>Known for:
-                  Known for blending menswear, vintage, and red-carpet drama
-                  <br>A symbol of youth-driven style and fearless reinvention
- 
-      </p>
-              </div>
-              <div class="flex-image">
-                <img src="img/m8.jpg">
-              </div>
-            </div>
+    <!-- How Clothing Is Made Today -->
+    <div class="flex-row hidden">
+      <div class="flex-image">
+        <img src="img/m7.jpg" alt="Modern garment workshop">
+      </div>
+      <div class="flex-text">
+        <h4 class="glow-text" >🧵 How Clothing Is Made Today</h4>
+        <p>
+          Fashion production now ranges from handcrafted couture to automated mass production:
+          <br><br>• Fast fashion brands use algorithm-driven design with weeks-to-market timelines
+          <br><br>• Sustainability innovations include biodegradable & recycled textiles
+          <br><br>• 3D printing, AI design, & custom-fit apps are reshaping the industry
+          <br><br>• Local artisans & small-batch designers provide alternatives to global chains
+        </p>
+      </div>
+    </div>
 
+    <!-- Icons of Modern Fashion -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text" style="font-size:30px;">🌍 Icons of Modern Fashion</h4><br>
+        <p>
+          <strong>Zendaya</strong><br>
+          Actress, activist, and fashion chameleon—blends menswear, vintage, and red-carpet drama.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m8.jpg" alt="Zendaya">
+      </div>
+    </div>
 
-                  <div class="flex-row">
-                    <div class="flex-text">
-                    
-                      <p>Virgil Abloh <br>
+    <div class="flex-row hidden">
+      <div class="flex-text">
+		  <p>
+          <strong>Virgil Abloh </strong><br>
+        
+          A streetwear visionary — late founder of Off‑White and Louis Vuitton's first Black artistic director. Known for redefining menswear through urban-luxury fusion.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m9.jpg" alt="Virgil Abloh">
+      </div>
+    </div>
 
-                        A Victorian style icon for men, he was influential in formal menswear trends.
-                        <br><br>Known for:
-                        Late founder of Off-White and Louis Vuitton’s first Black artistic director
-                        <br>Blurred lines between streetwear and high fashion
-                        <br>Known for irony, cultural references, and rethinking classic silhouettes
+    <!-- Notable Designers & Brands -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text"style="font-size:30px;">👗 Notable Designers & Brands</h4><br>
+        <p>
+          <strong>Stella McCartney</strong><br>
+          A pioneer in sustainable, cruelty-free fashion: modern tailoring meets environmental consciousness.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m10.jpg" alt="Stella McCartney">
+      </div>
+    </div>
 
-                   
-
-            </p>
-                    </div>
-                    <div class="flex-image">
-                      <img src="img/m9.jpg">
-                    </div>
-                  </div>
-<br><br>
-        <div class="flex-row">
-          <div class="flex-text">
-            <h2> 👗 Notable Designers & Brands Shaping Modern Fashion </h2><br>
-            <p>
-              Stella McCartney<br>
-              Pioneer in sustainable, cruelty-free fashion<br><br>
-              Known for:<br>
-              Combines modern tailoring with environmental consciousness
-            </p>
-          </div>
-          <div class="flex-image">
-            <img src="img/m10.jpg">
-          </div>
-        </div>
-
-        <div class="flex-row">
-          <div class="flex-text">
-          
-            <p>
-              Virgil Abloh<br>
-              Streetwear visionary and artistic director of Louis Vuitton Men’s<br><br>
-              Known for:<br>
-              Blending luxury with urban culture through Off-White and redefining menswear
-            </p>
-          </div>
-          <div class="flex-image">
-            <img src="img/m11.jpg"> 
-          </div>
-        </div>
+  </div>
   </main>
+  <script>
+     // Scroll-triggered fade-in effect using IntersectionObserver
+     const hiddenElements = document.querySelectorAll('.hidden');
+
+     const observer = new IntersectionObserver((entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add('show');
+         } else {
+           entry.target.classList.remove('show');
+         }
+       });
+     }, {
+       threshold: 0.5,
+     });
+
+     hiddenElements.forEach((el) => observer.observe(el));
+   </script>
 </body>
     </html>

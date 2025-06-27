@@ -12,31 +12,95 @@
 </head>
 <body>
     <style>
-        body {
-            background-image: url('img/modern.jpg');
-            background-size: cover; 
-            background-repeat: no-repeat; 
-            background-position: center; 
-        }
+         body {
+  background-color: rgb(57, 72, 88);
+  }
+
+  .paleoBlog{
+  background-color: rgb(224, 204, 164);
+  }
+
+  .paleo-container{
+    margin-bottom:50px;
+  }
 
 
-      /* Container style */
-      .container {
-        background-color: rgba(255, 255, 255, 0.85); /* white with opacity */
-        max-width: 900px;
-        margin-top:500px;
-        padding: 40px 30px;
-        border-radius: 10px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        color: #333;
-      }
+@media (max-width:700px) {
+.navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
 
-      .typewriter {
-        font-family: 'Baskervville', serif;
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 30px;
-      }
+    .navbar ul {
+    flex-direction: column;
+    padding: 0;
+    }
+
+    .navbar ul li {
+    margin: 10px 0;
+    }
+
+    .image-with-caption {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+
+    .paleo-container,
+    .paleo-container2 {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .paleo-container img,
+    .paleo-container2 img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 15px;
+    }
+
+    .subbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .paleodesc,
+    .paleodesc2{
+    padding: 0 15px;
+    text-align: center;
+    }
+
+    .paleotitle,
+    .paleotitle2 {
+    text-align: center;
+    font-size: 1.6em;
+    }
+
+    .text-center-wrapper {
+    text-align: center;
+    padding: 0 15px;
+    }
+
+    .typewriter .text {
+    font-size: 1.8em;
+    text-align: center;
+    }
+
+    .subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0 10px;
+    }
+  
+
+      
+    .typewriter .text{
+    margin-top: 580px;
+
+    }}
 
     </style>
 </head>
@@ -45,6 +109,16 @@
 <a href="index.html"><nav class="navbar">
     <img src="img/logo.png">
     <ul></a>
+
+        
+  <li class="dropdown"><a href="">TIMELINE</a>
+  <ul class="dropdown-content">
+    <li><a href="paleolithic.html">Paleolithic</a></li>
+    <li><a href="renaissance.html">Renaissance</a></li>
+    <li><a href="victorian.html">Victorian</a></li>
+    <li><a href="jazz.html">1920s</a></li>
+    <li><a href="modern.html">Modern</a></li>
+  </ul></li>
 
 
                     <li class="dropdown"><a href="fashion.html">FASHION</a>
@@ -73,63 +147,71 @@
 
 
   <li class="dropdown"><a href="index.html">HOME</a>
-  <ul class="dropdown-content">
-    <li><a href="paleolithic.html">Paleolithic</a></li>
-    <li><a href="renaissance.html">Renaissance</a></li>
-    <li><a href="victorian.html">Victorian</a></li>
-    <li><a href="jazz.html">1920s</a></li>
-    <li><a href="modern.html">Modern</a></li>
-  </ul></li>
-</ul>
-
       </nav>
   </header>
 
 
-  <main >
-    <div class="container">
-      <div class="typewriter">
-        <p class="text" style="margin-left:0.5px;margin-top:20px;">Modern Era</p>
-      </div>
-      <h2>“The future belongs to those who believe in the beauty of their dreams.” — Eleanor Roosevelt</h2>
-        <p>An Age of Globalization, Technology, and Social Awakening </p>
-        <br>
-          <img src="img/m_info.jpg" style="height:500px"><br><br>
-        <p>“The Modern Era is defined by rapid technological advancement, shifting cultural norms, and a growing focus on global connectivity, individual rights, and sustainability.”
+  
+<div class="typewriter">
+  <p class="text">Modern Era</p>
+</div>  
+<p class="subtitle">“The future belongs to those who believe in the beauty of their dreams.” — Eleanor Roosevelt</p>
 
-</p>
-        <br><br>
-        <h2>KEY CONCEPT: TECHNOLOGY & IDENTITY</h2>
-    <br><p>The digital age has redefined personal identity, community, and culture. Social media, artificial intelligence, and digital art have created new forms of expression and connection — while also raising questions about privacy, ethics, and authenticity.
+<div class="paleoBlog">
 
+  <section class="hidden glow-text">
+    <p>An Age of Globalization, Technology, and Social Awakening</p>
+  </section>
 
+  <section class="hidden paleo-container">
+    <img class="paleohead" src="img/m_info.jpg" style="height:400px; width:330px;">
+    <p class="paleodesc">
+      “The Modern Era is defined by rapid technological advancement, shifting cultural norms, and a growing focus on global connectivity, individual rights, and sustainability.”
+    </p>    
+  </section>  
 
-</p>
+  <section class="hidden">  
+    <h2 class="paleotitle glow-effect">KEY CONCEPT: TECHNOLOGY & IDENTITY</h2>
+  </section>
 
-         <br><br>
-                <h2>3 ICONIC FIGURES OF THE MODERN ERA</h2>
-         <br><h3>Elon Musk</h3>
-        <br>  <img src="img/m_info1.jpg" style="height:500px;"><br><br>
-        <h3>Known for: SpaceX, Tesla, and pushing technological boundaries<br>
-        Musk represents the ambition of the modern tech era — from electric cars to space exploration — while sparking debates on innovation vs. controversy.</h3>
-        </p>
-        <br><br>
-        <h3>Malala Yousafzai</h3>
-        <br>  <img src="img/m_info2.jpg" style="height:500px;"><br><br>
-        <h3>Known for: Advocacy for girls' education and global peace<br>
-        Survivor, Nobel Laureate, and activist, Malala embodies the global fight for education, human rights, and resilience in the face of oppression.</h3>
-        </p>
-        <br><br>
-        <h3>Barack Obama</h3>
-        <br>  <img src="img/m_info3.jpg" style="height:500px;"><br><br>
-        <h3>Known for: First African American President of the United States<br>
-            Obama’s presidency (2009–2017) marked a historic milestone in U.S. and global politics. His leadership emphasized hope, inclusivity, diplomacy, and progress in areas such as healthcare reform, climate policy, and international cooperation.
+  <section class="hidden text-center-wrapper" style="margin-bottom: 50px;">
+    <p class="paleodesc2">
+      The digital age has redefined personal identity, community, and culture. Social media, artificial intelligence, and digital art have created new forms of expression and connection — while also raising questions about privacy, ethics, and authenticity.
+    </p>
+  </section>
 
+  <section class="hidden paleotitle glow-effect">
+    <p>3 ICONIC FIGURES OF THE MODERN ERA</p>
+  </section>
 
-
-</h3>
-        </p>
+  <div class="mystery hidden">
+    <div>
+      <p class="subtext" id="modern1">Elon Musk</p> 
+      <p class="paleodesc7" style="margin-left:45px;">Known for: SpaceX, Tesla, and pushing technological boundaries<br>
+        Musk represents the ambition of the modern tech era — from electric cars to space exploration — while sparking debates on innovation vs. controversy.</p>
     </div>
-  </main>
+    <img src="img/m_info1.jpg" style="height:300px; width:400px; border-radius: 10px;" alt="Elon Musk">
+  </div>
+
+  <div class="mystery hidden">
+    <div>
+      <p class="subtext" id="modern2">Malala Yousafzai</p> 
+      <p class="paleodesc7" style="margin-left:45px;">Known for: Advocacy for girls' education and global peace<br>
+        Survivor, Nobel Laureate, and activist, Malala embodies the global fight for education, human rights, and resilience in the face of oppression.</p>
+    </div>
+    <img src="img/m_info2.jpg" style="height:430px; width:400px; border-radius: 10px;" alt="Malala Yousafzai">
+  </div>
+
+  <div class="mystery hidden">
+    <div>
+      <p class="subtext" id="modern3">Barack Obama</p> 
+      <p class="paleodesc7" style="margin-left:45px;">Known for: First African American President of the United States<br>
+        Obama’s presidency (2009–2017) marked a historic milestone in U.S. and global politics. His leadership emphasized hope, inclusivity, diplomacy, and progress in areas such as healthcare reform, climate policy, and international cooperation.</p>
+    </div>
+    <img src="img/m_info3.jpg" style="height:300px; width:400px; border-radius: 10px;" alt="Barack Obama">
+  </div>
+
+</div>
+
 </body>
 </html>

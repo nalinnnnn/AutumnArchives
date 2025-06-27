@@ -15,100 +15,126 @@
 </head>
 <body>
     <style>
-         body {
-  background-color: rgb(57, 72, 88);
+   .flex-row {
+         display: flex;
+         align-items: flex-start;
+         gap: 30px;
+         margin-top: 30px;
+       }
+
+       .flex-image img {
+         max-width: 300px;
+         height: auto;
+         border-radius: 8px;
+       }
+
+       .flex-text {
+         max-width: 600px;
+         font-family: 'Roboto', sans-serif;
+         color: #333;
+         text-align: center;
+       }
+	
+   	.flex-text p{
+   		font-size:22px;
+   	}
+
+       @keyframes popIn {
+         0% {
+           transform: scale(0.8);
+           opacity: 0;
+         }
+
+         100% {
+           transform: scale(1);
+           opacity: 1;
+         }
+       }
+       .headwall {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: top;
+       display: block;
+       }
+       .headwall-wrapper {
+          width: 100%;
+          height: 350px;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+          }
+       .container {
+         animation: popIn 1.3s ease-out forwards;
+         transform-origin: center;
+         opacity: 0;
+       }
+
+       section.hidden {
+         opacity: 0;
+         transform: translateY(40px);
+         filter: blur(3px);
+         transition: all 1s ease;
+       }
+
+       section.hidden.show {
+         opacity: 1;
+         transform: translateY(0);
+         filter: blur(0);
+       }
+
+       /* Responsive */
+       @media (max-width: 768px) {
+         .flex-row {
+           flex-direction: column;
+           margin: 30px 20px;
+         }
+
+         .flex-text {
+           text-align: center;
+         }
+
+         .flex-image img {
+           max-width: 90vw;
+         }
+
+         .example-clothes {
+           justify-content: center;
+         }
+
+         .headwall-wrapper {
+           height: 250px;
+         }
+
+         section.top-section h2.title7 {
+           font-size: 2.5rem;
+         }
+
+         section.top-section p.subtitle7 {
+           font-size: 1rem;
+         }
+       }
+
+       /* MOBILE VIEW */
+       @media (max-width: 768px) {
+
+         .container {
+           margin-top: 550px;
+         }
+       }
+
+    
+
   }
-
-  .paleoBlog{
-  background-color: rgb(224, 204, 164);
-  }
-
-  .paleo-container{
-    margin-bottom:50px;
-  }
-
-
-@media (max-width:700px) {
-.navbar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    }
-
-    .navbar ul {
-    flex-direction: column;
-    padding: 0;
-    }
-
-    .navbar ul li {
-    margin: 10px 0;
-    }
-
-    .image-with-caption {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    }
-
-    .paleo-container,
-    .paleo-container2 {
-    flex-direction: column;
-    align-items: center;
-    }
-
-    .paleo-container img,
-    .paleo-container2 img {
-    width: 90%;
-    height: auto;
-    margin-bottom: 15px;
-    }
-
-    .subbox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-
-    .paleodesc,
-    .paleodesc2{
-    padding: 0 15px;
-    text-align: center;
-    }
-
-    .paleotitle,
-    .paleotitle2 {
-    text-align: center;
-    font-size: 1.6em;
-    }
-
-    .text-center-wrapper {
-    text-align: center;
-    padding: 0 15px;
-    }
-
-    .typewriter .text {
-    font-size: 1.8em;
-    text-align: center;
-    }
-
-    .subtitle {
-    text-align: center;
-    font-size: 1.1em;
-    padding: 0 10px;
-    }
-  
-
-      
-    .typewriter .text{
-    margin-top: 580px;
-
-    }}
 
     </style>
 </head>
 <body>
 <header>
+    
+	      <div class="headwall-wrapper">
+	    <img src="img/h_mo.png" class="headwall" style="width:300%">
+	  </div>
+    
 <a href="index.html"><nav class="navbar">
     <img src="img/logo.png">
     <ul></a>
@@ -149,67 +175,143 @@
 </header>
 
 
-  
-<div class="typewriter">
-  <p class="text">Modern Era</p>
-</div>  
-<p class="subtitle">“The future belongs to those who believe in the beauty of their dreams.” — Eleanor Roosevelt</p>
+  <section class="hidden top-section">
+   <div><h2 class="title7" id="gizatitle">  The Era of Identity: <br>Modern Fashion Unbound 👟</h2>
+   <p class="subtitle7">~Threads today speak louder than ever—fluid, fearless, and shaped by the voice of individuality.</p>
+   </div>
+   </section>
+<body style = "background-color:#cdcdcd">
+  <main>
+    <div class="container">
+    <section class="hidden glow-text">
+      <h4 style="font-size:35px;">
+        "The Modern Era is defined by rapid technological advancement, shifting cultural norms, and a growing focus on global connectivity, individual rights, and sustainability."
+      </h4>
+    </section>
+    
 
-<div class="paleoBlog">
-
-  <section class="hidden glow-text">
-    <p>An Age of Globalization, Technology, and Social Awakening</p>
-  </section>
-
-  <section class="hidden paleo-container">
-    <img class="paleohead" src="img/m_info.jpg" style="height:380px; width:540px;">
-    <p class="paleodesc">
-      “The Modern Era is defined by rapid technological advancement, shifting cultural norms, and a growing focus on global connectivity, individual rights, and sustainability.”
-    </p>    
-  </section>  
-
-  <section class="hidden">  
-    <h2 class="paleotitle glow-effect">KEY CONCEPT: TECHNOLOGY & IDENTITY</h2>
-  </section>
-
-  <section class="hidden text-center-wrapper" style="margin-bottom: 50px;">
-    <p class="paleodesc2">
-      The digital age has redefined personal identity, community, and culture. Social media, artificial intelligence, and digital art have created new forms of expression and connection — while also raising questions about privacy, ethics, and authenticity.
-    </p>
-  </section>
-
-  <section class="hidden paleotitle glow-effect">
-    <p>3 ICONIC FIGURES OF THE MODERN ERA</p>
-  </section>
-
-  <div class="mystery hidden">
-    <div>
-      <p class="subtext" id="modern1">Elon Musk</p> 
-      <p class="paleodesc7" style="margin-left:45px;">Known for: SpaceX, Tesla, and pushing technological boundaries<br>
-        Musk represents the ambition of the modern tech era — from electric cars to space exploration — while sparking debates on innovation vs. controversy.</p>
+   
+    <div class="flex-row hidden">
+      <div class="flex-image">
+        <img src="img/m1.jpg" alt="Modern fashion illustration">
+      </div>
+      <div class="flex-text">
+        <h4 style="font-size:35px;" class="glow-text">Why Clothing Is <br>Important Today</h4> <br>
+        <p>
+          Fashion now plays a vital role in shaping personal identity, culture, and global conversation. Key influences include:
+          <br>• Social media & influencer culture driving fast trend cycles
+          <br>• A growing awareness of sustainability, ethics, and environmental impact
+          <br>• Diversity in representation—gender-fluid fashion, inclusive sizing, cultural fusion
+        </p>
+      </div>
     </div>
-    <img src="img/m_info1.jpg" style="height:300px; width:400px; border-radius: 10px;" alt="Elon Musk">
-  </div>
 
-  <div class="mystery hidden">
-    <div>
-      <p class="subtext" id="modern2">Malala Yousafzai</p> 
-      <p class="paleodesc7" style="margin-left:45px;">Known for: Advocacy for girls' education and global peace<br>
-        Survivor, Nobel Laureate, and activist, Malala embodies the global fight for education, human rights, and resilience in the face of oppression.</p>
+    <!-- What We Wear Now -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text">👕 What We Wear Now</h4><br>
+        <p>
+          There’s no single dominant style—instead, a mosaic of trends, subcultures, and influences:
+          <br>• Sustainable/Slow Fashion: natural & recycled materials
+          <br>• Athleisure: fitness meets streetwear
+          <br>• High fashion meets casual: luxury + basics
+          <br>• Gender-fluid clothing & uni-sex collections
+          <br>• Techwear: functional, futuristic designs
+          <br>• Cultural fusion: global aesthetics inspire designers
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m5.jpg" alt="Modern blended styles">
+      </div>
     </div>
-    <img src="img/m_info2.jpg" style="height:430px; width:400px; border-radius: 10px;" alt="Malala Yousafzai">
-  </div>
 
-  <div class="mystery hidden">
-    <div>
-      <p class="subtext" id="modern3">Barack Obama</p> 
-      <p class="paleodesc7" style="margin-left:45px;">Known for: First African American President of the United States<br>
-        Obama’s presidency (2009–2017) marked a historic milestone in U.S. and global politics. His leadership emphasized hope, inclusivity, diplomacy, and progress in areas such as healthcare reform, climate policy, and international cooperation.</p>
+    <!-- Example Clothes Grid -->
+    <div class="flex-row hidden">
+      <h4 style="width:100%;" class="glow-text">Example Clothes</h4><br>
+      <div class="flex-image" style="display:flex;gap:15px;">
+        <img src="img/m2.jpg" alt="Streetwear example">
+        <img src="img/m3.jpg" alt="Sustainable fashion example">
+       
+      </div>
     </div>
-    <img src="img/m_info3.jpg" style="height:300px; width:400px; border-radius: 10px;" alt="Barack Obama">
+
+    <!-- How Clothing Is Made Today -->
+    <div class="flex-row hidden">
+      <div class="flex-image">
+        <img src="img/m7.jpg" alt="Modern garment workshop">
+      </div>
+      <div class="flex-text">
+        <h4 class="glow-text" >🧵 How Clothing Is Made Today</h4>
+        <p>
+          Fashion production now ranges from handcrafted couture to automated mass production:
+          <br><br>• Fast fashion brands use algorithm-driven design with weeks-to-market timelines
+          <br><br>• Sustainability innovations include biodegradable & recycled textiles
+          <br><br>• 3D printing, AI design, & custom-fit apps are reshaping the industry
+          <br><br>• Local artisans & small-batch designers provide alternatives to global chains
+        </p>
+      </div>
+    </div>
+
+    <!-- Icons of Modern Fashion -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text" style="font-size:30px;">🌍 Icons of Modern Fashion</h4><br>
+        <p>
+          <strong>Zendaya</strong><br>
+          Actress, activist, and fashion chameleon—blends menswear, vintage, and red-carpet drama.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m8.jpg" alt="Zendaya">
+      </div>
+    </div>
+
+    <div class="flex-row hidden">
+      <div class="flex-text">
+		  <p>
+          <strong>Virgil Abloh </strong><br>
+        
+          A streetwear visionary — late founder of Off‑White and Louis Vuitton's first Black artistic director. Known for redefining menswear through urban-luxury fusion.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m9.jpg" alt="Virgil Abloh">
+      </div>
+    </div>
+
+    <!-- Notable Designers & Brands -->
+    <div class="flex-row hidden">
+      <div class="flex-text">
+        <h4 class="glow-text"style="font-size:30px;">👗 Notable Designers & Brands</h4><br>
+        <p>
+          <strong>Stella McCartney</strong><br>
+          A pioneer in sustainable, cruelty-free fashion: modern tailoring meets environmental consciousness.
+        </p>
+      </div>
+      <div class="flex-image">
+        <img src="img/m10.jpg" alt="Stella McCartney">
+      </div>
+    </div>
+
   </div>
+  </main>
+  <script>
+     // Scroll-triggered fade-in effect using IntersectionObserver
+     const hiddenElements = document.querySelectorAll('.hidden');
 
-</div>
+     const observer = new IntersectionObserver((entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add('show');
+         } else {
+           entry.target.classList.remove('show');
+         }
+       });
+     }, {
+       threshold: 0.5,
+     });
 
+     hiddenElements.forEach((el) => observer.observe(el));
+   </script>
 </body>
-</html>
+    </html>

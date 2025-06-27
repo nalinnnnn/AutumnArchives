@@ -12,245 +12,302 @@
   <style>
 
 
-    .flex-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 30px;
-    }
 
-    .flex-image img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-    }
-
-      .flex-text p{
-          font-size:22px;
+      .flex-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-top: 30px;
       }
 
-    .flex-text {
-      max-width: 600px;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      text-align: center;
-    }
-
-    @keyframes popIn {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
+      .flex-image img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
       }
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
+      .flex-text {
+        max-width: 600px;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        text-align: center;
       }
-    }
+	
+  	.flex-text p{
+  		font-size:22px;
+  	}
 
-    .container {
-      animation: popIn 3.7s ease-out forwards;
-      transform-origin: center;
-      opacity: 0;
-    }
+      @keyframes popIn {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
 
-    
-
-    /* MOBILE VIEW */
-    @media (max-width: 768px) {
-
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .headwall {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      }
+      .headwall-wrapper {
+         width: 100%;
+         height: 350px;
+         overflow: hidden;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.397); /* adjust as needed */
+         }
       .container {
-        margin-top: 550px;
+        animation: popIn 1.3s ease-out forwards;
+        transform-origin: center;
+        opacity: 0;
+		
       }
-    }
 
+      section.hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(3px);
+        transition: all 1s ease;
+      }
 
+      section.hidden.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .flex-row {
+          flex-direction: column;
+          margin: 30px 20px;
+        }
+
+        .flex-text {
+          text-align: center;
+        }
+
+        .flex-image img {
+          max-width: 90vw;
+        }
+
+        .example-clothes {
+          justify-content: center;
+        }
+
+        .headwall-wrapper {
+          height: 250px;
+        }
+
+        section.top-section h2.title7 {
+          font-size: 2.5rem;
+        }
+
+        section.top-section p.subtitle7 {
+          font-size: 1rem;
+        }
+      }
+
+      /* MOBILE VIEW */
+      @media (max-width: 768px) {
+
+        .container {
+          margin-top: 550px;
+        }
+      }
+     
 
   </style>
       </head>
-
-<header>
-<a href="index.html"><nav class="navbar">
-    <img src="img/logo.png">
-    <ul></a>
-
-<li class="dropdown"><a href="index.html">HOME</a>
-        
-<li class="dropdown"><a href="">TIMELINE</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic.html">Paleolithic</a></li>
-    <li><a href="renaissance.html">Renaissance</a></li>
-    <li><a href="victorian.html">Victorian</a></li>
-    <li><a href="jazz.html">1920s</a></li>
-    <li><a href="modern.html">Modern</a></li>
-</ul></li>
-
-<li class="dropdown"><a href="7wonders.html">7 WONDERS</a>
-<ul class="dropdown-content">
-    <li><a href="giza.html">Giza</a></li>
-    <li><a href="babylon.html">Babylon</a></li>
-    <li><a href="artemis.html">Artemis</a></li>
-    <li><a href="zeus.html">Statue Of Zeus</a></li>
-    <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
-    <li><a href="rhodes.html">Rhodes</a></li>
-    <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
-</li></ul>
-
-                    <li class="dropdown"><a href="fashion.html">FASHION</a>
-<ul class="dropdown-content">
-    <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
-    <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
-    <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
-    <li><a href="1920_fashion.html">1920s Fashion</a></li>
-    <li><a href="modern_fashion.html">Modern Fashion</a></li>
-</li></ul>
-
-<li class="dropdown"><a href="art.html">ART PIECES</a>
-    </nav>
-</header>
-        
-<body style = "background-color:#cdcdcd">
-  <main>
-    <div class="container">
-      <h1> The Rise of Elegance: Victorian Fashion Flourishes</h1>
-      <p style="font-size:22px;"><br> The Victorian era, spanning from 1837 to 1901 during Queen Victoria’s reign, marked a period of strict social codes, industrial growth, and rapidly changing fashion. Unlike Renaissance fashion, which was lavish and symbolic of royalty, Victorian fashion emphasized modesty, structure, and propriety. This era saw the rise of the middle class, and clothing became an indicator of morality, gender roles, and respectability.
-
-</p>
-
-   
-      <div class="flex-row">
-        <div class="flex-image">
-          <img src="img/v_fashion.jpg" alt="Paleolithic clothing illustration">
-        </div>
-        <div class="flex-text">
-          <h2>👗 Why Clothing Was Important
-</h2>
-         <p style="font-size:22px"> Unlike the expressive and artful attire of earlier periods,
-          Victorian clothing reflected morality, gender roles, and social order.
-          <br>The Industrial Revolution, which made clothing more affordable and accessible
-          <br>It was also influenced by:
-           <br>New inventions like the sewing machine, which sped up garment production
-          <br>
-          The rise of department stores and fashion magazines
-          <br>
-          Strict societal expectations — especially for women, who were expected to dress modestly
-          Clothing reinforced Victorian values such as modesty, restraint, and class hierarchy.
-        <br>
-
-          </p>
-        </div>
-      </div>
+    <div class="headwall-wrapper">
+  <img src="img/h_vic.png" class="headwall" style="width:300%">
+</div>
+  
+   <header>
+     <nav class="navbar">
+       <a href="index.html">
+         <img src="img/logo.png" alt="Logo">
+       </a>
+       <ul class="main-menu">
+      
+      
+         <li class="dropdown">
+           <a href="index.html">TIMELINE</a>
+         </li>
 
     
-      <div class="flex-row">
-        <div class="flex-text">
-          <h2> What They Wore ✨  </h2> <br>
-          <p>Victorian fashion was intricate, layered, and dictated by social norms.
-            <br> Some key features included:
+         <li class="dropdown">
+           <a href="fashion.html">FASHION</a>
+           <ul class="dropdown-content">
+             <li><a href="paleolithic_fashion.html">Paleolithic Fashion</a></li>
+             <li><a href="renaissance_fashion.html">Renaissance Fashion</a></li>
+             <li><a href="victorian_fashion.html">Victorian Fashion</a></li>
+             <li><a href="1920_fashion.html">1920s Fashion</a></li>
+             <li><a href="modern_fashion.html">Modern Fashion</a></li>
+           </ul>
+         </li>
 
-            <br> Women: Corsets, crinolines, hoop skirts, bustles, and high-necked blouses
-<br>Men: Tailcoats, waistcoats (vests), top hats, and trousers
-  <br>Accessories: Gloves, parasols, bonnets for women; pocket watches and canes for men
-    <br>Dresses changed shapes over the decades — from bell-shaped skirts to bustled backs
-            <br>Dark, rich colors in winter; lighter fabrics and lace in summer
-            
-</p>
-        </div>
-        <div class="flex-image">
-          <img src="img/v_fashion2.jpg">
-        </div>
-      </div>
+             <li class="dropdown">
+           <a href="7wonders.html">7 WONDERS</a>
+           <ul class="dropdown-content">
+             <li><a href="giza.html">Giza</a></li>
+             <li><a href="babylon.html">Babylon</a></li>
+             <li><a href="artemis.html">Artemis</a></li>
+             <li><a href="zeus.html">Statue Of Zeus</a></li>
+             <li><a href="mausoleum.html">Mausoleum At Halicarnassus</a></li>
+             <li><a href="rhodes.html">Rhodes</a></li>
+             <li><a href="alexandria.html">Lighthouse Of Alexandria</a></li>
+           </ul>
+         </li>
 
-  <br>
-
-
-      <div class="flex-row">
-         <h2 style="font-size:30px;margin-left:120px;margin-top:70px;">  Example Clothes  </h2><br>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-          
-          <img src="img/v2.jpg" >
-          <img src="img/v1.jpg" >
-           <img src="img/v3.jpg" >
-        </div>
-     
-        </div>
-     
-    <div class="flex-row">
-      <div class="flex-image">
-      
-         <img src="img/v4.jpg">
-      </div>
-      <div class="flex-text">
-        <h2>🪡 How Clothing Is Made Today </h2>
-        <p><br>
-          The Victorian age brought innovation to fashion manufacturing:
-          <br><br>
-          Sewing machines revolutionized tailoring and home dressmaking
-          <br><br>
-          Paper sewing patterns (e.g., by Butterick) allowed people to sew at home
-          <br><br>
-          Ready-to-wear clothing emerged due to factory production
         
+         <li class="dropdown">
+           <a href="art.html">ART PIECES</a>
+         </li>
+
+       </ul>
+     </nav>
+   </header>
+   
+   <section class="hidden top-section">
+   <div><h2 class="title7" id="gizatitle">Timeless Grace: <br>Victorian Attire</h2>
+   <p class="subtitle7">~Tightly laced and finely stitched, Victorian dress whispered of order, elegance, and a rapidly transforming age.~</p>
+   </div>
+   </section>   
+   
+<body style = "background-color:#cdcdcd">
+  <main>
+   <div class="container" style="margin-top:100px;">
+     <section class="hidden glow-text">
+       <h4 style="font-size:35px;">
+       "Victorian fashion reveals not just elegance, but the values, discipline, and aspirations of a changing society."
+       </h4>
+     </section>
+	 
+   
+	 <div class="flex-row hidden">
+	      <div class="flex-image">
+	        <img src="img/v_fashion.jpg" alt="Victorian clothing illustration">
+	      </div>
+	      <div class="flex-text">
+	        <h4 style="font-size:35px;">👗 Why Clothing Was Important</h4>
+	        <p>
+	          Unlike the expressive clothing of earlier eras, Victorian dress reflected morality, gender roles,
+	          and social order. <br>
+	          The Industrial Revolution made clothes more affordable and accessible, influenced by:
+	          <br> • Sewing machines speeding up production
+	          <br> • Department stores & fashion magazines emerging
+	          <br> • Strict societal expectations—especially modesty for women
+	          <br> Clothing reinforced Victorian values: modesty, restraint, and class hierarchy.
+	        </p>
+	      </div>
+	    </div>
+
+	    <!-- What They Wore -->
+	    <div class="flex-row hidden">
+	      <div class="flex-text">
+	        <h4 class="glow-text"style="font-size:35px;">What They Wore ✨</h4><br>
+	        <p>
+	          Victorian fashion was intricate, layered, and dictated by social norms.
+	          <br>Women: corsets, crinolines, hoop skirts, bustles, high-necked blouses.
+	          <br>Men: tailcoats, waistcoats, top hats, trousers.
+	          <br>Accessories: gloves, parasols, bonnets, pocket watches, canes.
+	          <br>Dresses evolved—bell-shaped skirts to bustled backs.
+	          <br>Dark, rich colors in winter; lighter fabrics & lace in summer.
+	        </p>
+	      </div>
+	      <div class="flex-image">
+	        <img src="img/v_fashion2.jpg" alt="Victorian fashion details">
+	      </div>
+	    </div>
+
+	    <!-- Example Clothes Grid -->
+	    <div class="flex-row hidden">
+	      <h4 style="font-size:30px; width:100%;" class="glow-text">Example Clothes</h4><br>
+	      <div class="flex-image" style="display:flex; gap:6px;">
+	        <img src="img/v2.jpg" alt="Victorian dress example">
+	    
+	        <img src="img/v3.jpg" alt="Victorian hat example">
+	      </div>
+	    </div>
 
 
-          <br><br>
-          Dressmakers, milliners, and tailors specialized in high society garments
-          <br><br>
-          Corsets were made with whale bone or steel to cinch waists
-          <br><br>
-          Embellishments like lace, ribbon, and beading were hand-applied for upper-class clientele
-          <br>
-        </p>
-      </div>
-    </div>
+	    <div class="flex-row hidden">
+	      <div class="flex-image">
+	        <img src="img/v4.jpg" alt="Victorian sewing machine">
+	      </div>
+	      <div class="flex-text">
+	        <h4 style="font-size:35px;">🪡 How Clothing Was Made</h4>
+	        <p>
+	          The Victorian era brought innovation to fashion manufacturing:
+	          <br><br>• Sewing machines revolutionized tailoring and home dressmaking.
+	          <br><br>• Paper patterns (e.g., Butterick) let people sew at home.
+	          <br><br>• Ready-to-wear emerged via factories.
+	          <br><br>• Dressmakers, milliners, tailors served high society.
+	          <br><br>• Corsets used whale-bone or steel for waist shaping.
+	          <br><br>• Lace, ribbon, beading were hand-applied for the affluent.
+	        </p>
+	      </div>
+	    </div>
 
+	    <!-- Royal Examples -->
+	    <div class="flex-row hidden">
+	      <div class="flex-text">
+	        <h4 style="font-size:35px;">👑 Examples of Victorian Fashion</h4><br>
+	        <p>
+	          Queen Victoria of England shaped era trends across Europe.
+	          <br><br>Known for:
+	          • Wearing a white wedding dress, popularizing bridal fashion.
+	          <br>• Promoting modesty and dignity in attire.
+	          <br>• Influencing mourning wear—black lace, veils, jet jewelry.
+	        </p>
+	      </div>
+	      <div class="flex-image">
+	        <img src="img/v5.jpg" alt="Queen Victoria portrait">
+	      </div>
+	    </div>
 
-            <div class="flex-row">
-              <div class="flex-text">
-                <h2> 👑 Examples of Victorian Fashion </h2> <br>
-                <p>Queen Victoria of England <br>
-
-                  A defining figure of the era, Queen Victoria shaped fashion trends across Europe.
-                  <br><br>Known for:
-                  Wearing a white wedding dress, which popularized the modern bridal gown
-                  <br>Emphasizing modesty and dignity in dress
-                  <br>Influencing widespread use of mourning attire (black lace, veils, and jet jewelry)
-                
-
-
-      </p>
-              </div>
-              <div class="flex-image">
-                <img src="img/v5.jpg">
-              </div>
-            </div>
-
-
-<br><br>
-      <div class="flex-row">
-        <div class="flex-text">
-           <h2> 🧵 Notable Victorian Fashion Designers & Influencers</h2> <br>
-          <p>Charles Frederick Worth
-
- <br>
-            Known for:📖 Founding the House of Worth in Paris, which dressed royalty and the elite
-            <br>Creating custom gowns with labels — a new concept in fashion
-            <br>Introducing seasonal fashion collections and live model presentations
-
-
-          
-
-      </p>
-        </div>
-        <div class="flex-image" style="display: flex; gap: 15px;height:200px;">
-          <img src="img/v6.jpg">
-           <img src="img/v7.jpg">
-          <div class="blank" style="margin-bottom:30px;">
-        </div>
-      </div>
-      
-    </div>
+	    <!-- Influential Designers -->
+	    <div class="flex-row hidden">
+	      <div class="flex-text">
+	        <h4 class="glow-text" style="font-size:35px;">🧵 Notable Victorian Fashion Designers & Influencers</h4><br>
+	        <p>
+	          Charles Frederick Worth
+	          <br>• Founded House of Worth in Paris, dressing royalty and elite.
+	          <br>• Created custom gowns with branded labels.
+	          <br>• Introduced seasonal collections and live runway previews.
+	        </p>
+	      </div>
+	      <div class="flex-image" style="display:flex; gap:15px;">
+	        <img src="img/v6.jpg" alt="Charles Frederick Worth">
+	        <img src="img/v7.jpg" alt="Victorian fashion sketches">
+	      </div>
+	    </div>
+	  </div>
   </main>
+  <script>
+     // Scroll-triggered fade-in effect using IntersectionObserver
+     const hiddenElements = document.querySelectorAll('.hidden');
+
+     const observer = new IntersectionObserver((entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add('show');
+         } else {
+           entry.target.classList.remove('show');
+         }
+       });
+     }, {
+       threshold: 0.5,
+     });
+
+     hiddenElements.forEach((el) => observer.observe(el));
+   </script>
 
     </body>
     </html>
